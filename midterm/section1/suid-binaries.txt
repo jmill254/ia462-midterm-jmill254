@@ -1,0 +1,14 @@
+/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/fusermount3
+/usr/bin/umount
+/usr/bin/su
+/usr/bin/mount
+/usr/bin/sudo.ws
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/cargo/bin/sudo
+/usr/lib/cargo/bin/su
+/usr/lib/openssh/ssh-keysign
+/usr/lib/landscape/apt-update

@@ -1,0 +1,1323 @@
+Script started on 2026-11-23 02:13:25-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="50"]
+[?2004h]0;jlmpi@DESKTOP-7BR8OG8: /mnt/c/Users/jlmpi[01;32mjlmpi@DESKTOP-7BR8OG8[00m:[01;34m/mnt/c/Users/jlmpi[00m$ sudo useradd -m -s /bin/bash labuser
+[?2004l[sudo: authenticate] Password: **********          
+useradd: user 'labuser' already exists
+[?2004h]0;jlmpi@DESKTOP-7BR8OG8: /mnt/c/Users/jlmpi[01;32mjlmpi@DESKTOP-7BR8OG8[00m:[01;34m/mnt/c/Users/jlmpi[00m$ groups labs[Kuser
+[?2004llabuser : labuser labgroup
+[?2004h]0;jlmpi@DESKTOP-7BR8OG8: /mnt/c/Users/jlmpi[01;32mjlmpi@DESKTOP-7BR8OG8[00m:[01;34m/mnt/c/Users/jlmpi[00m$ id labuser
+[?2004luid=1001(labuser) gid=1002(labuser) groups=1002(labuser),1003(labgroup)
+[?2004h]0;jlmpi@DESKTOP-7BR8OG8: /mnt/c/Users/jlmpi[01;32mjlmpi@DESKTOP-7BR8OG8[00m:[01;34m/mnt/c/Users/jlmpi[00m$ sudo nano /etc/profile
+[?2004l[?2004h[?1049h[22;0;0t[1;50r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[48;54H(B[0;7m[ Reading... ](B[m[48;52H(B[0;7m[ Read 27 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                         /etc/profile                                                   [1;119H(B[m[49d(B[0;7m^G(B[m Help[49;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[49;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[50d(B[0;7m^X(B[m Exit[50;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[36m# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))[3d# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).[5d[32mif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"${PS1-}"[39m(B[m [32m];[39m(B[m [32mthen[6;3Hif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"${BASH-}"[39m(B[m [32m][39m(B[m [32m&&[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$BASH"[39m(B[m [32m!=[39m(B[m (B[0;1m[33m"/bin/sh"[39m(B[m [32m];[39m(B[m [32mthen[7;4H[36m # The file bash.bashrc already sets the default PS1.[8;4H # PS1=(B[0;1m[33m'\h:\w\$ '[9;5H(B[0m[32mif[39m(B[m [32m[(B[0;1m[35m -f[39m(B[m /etc/bash.bashrc [32m];[39m(B[m [32mthen[10;7H[39m(B[m. /etc/bash.bashrc[11;5H[32mfi[12;3Helse[13dif[39m(B[m [32m[[39m(B[m (B[0;1m[33m"$(id -u)"[39m(B[m [32m-eq[39m(B[m 0 [32m];[39m(B[m [32mthen[14;7H[39m(B[mPS1[32m=(B[0;1m[33m'# '[15;5H(B[0m[32melse[16d[39m(B[mPS1[32m=(B[0;1m[33m'$ '[17;5H(B[0m[32mfi[18;3Hfi[19dfi[21dif[39m(B[m [32m[(B[0;1m[35m -d[39m(B[m /etc/profile.d [32m];[39m(B[m [32mthen[22;3Hfor[39m(B[m i [32min[39m(B[m [32m$([39m(B[mrun-parts(B[0;1m[35m --list --regex[39m(B[m (B[0;1m[33m'^[a-zA-Z0-9_][a-zA-Z0-9._-]*\.sh$'[39m(B[m /etc/profile.d[32m);[39m(B[m [32mdo[23;5Hif[39m(B[m [32m[(B[0;1m[35m -r[39m(B[m (B[0;1m[31m$i[39m(B[m [32m];[39m(B[m [32mthen[24;7H[39m(B[m. (B[0;1m[31m$i[25;5H(B[0m[32mfi[26;3Hdone[27;3H(B[0;1m[34munset[39m(B[m i[28d[32mfi[2d[39m(B[m[?12l[?25h[?25l[1;71H(B[0;7m*[119G(B[m7[2;47r8[2dM[1;50r[3;1H[?12l[?25h[?25l[2;47r[47;1H
+[1;50r[2;1H[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[48d[K[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hu[?25l[?12l[?25hm[?25l[?12l[?25ha[?25l[?12l[?25hs[?25l[?12l[?25h(B[0;1m[34mumask[39m(B[m[?25l[?12l[?25h[42m [49m(B[m[?25l[?12l[?25h 0[?25l[?12l[?25h2[?25l[?12l[?25h7[?25l[49;16H         (B[0;7mM-D(B[m DOS Format          (B[0;7mM-A(B[m Append[14X[49;73H(B[0;7mM-B(B[m Backup File         (B[0;7m^T(B[m Browse[K[50;2H(B[0;7mC(B[m Cancel[16G         (B[0;7mM-M(B[m Mac Format          (B[0;7mM-P(B[m Prepend             (B[0;7m^Q(B[m Discard buffer[K[49;106H[A(B[0;7mWrite to File: /etc/profile                                                                                             [48;28H(B[m[?12l[?25h[?25l[?12l[?25h[?25l[48;53H[1K (B[0;7m[ Writing... ](B[m[K[1;71H(B[0;7m [119G(B[m[48;52H(B[0;7m[ Wrote 28 lines ](B[m[49;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut         (B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo       (B[0;7mM-A(B[m Set Mark[50;2H(B[0;7mX(B[m Exit  [16G(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste       (B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[?12l[?25h[29;10H[?25l[48d[J[50d[?12l[?25h[50;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;jlmpi@DESKTOP-7BR8OG8: /mnt/c/Users/jlmpi[01;32mjlmpi@DESKTOP-7BR8OG8[00m:[01;34m/mnt/c/Users/jlmpi[00m$ source /etc/profile
+[?2004l]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=b90a993e-96b0-4248-9571-3d685481a60d;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ umask
+[?2004l]3008;start=304b9f40-6fa2-4346-9118-b5b4296f9ed9;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\0027
+]3008;end=304b9f40-6fa2-4346-9118-b5b4296f9ed9;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ touch ~/umask-[K[K[K[K[K[Ktest[K[K[K[Kumasktest
+[?2004l]3008;start=c9f131f9-1623-4e88-b2cb-bfe68ab90730;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=c9f131f9-1623-4e88-b2cb-bfe68ab90730;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ ls l0[K[K0k[K[K0l[K[K9k[K[K0k[K[K-k [K[Kl ~/umasktest 
+[?2004l]3008;start=3365c1c4-84f7-4986-b374-3e32a1a0f5ec;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\-rw-r----- 1 jlmpi jlmpi 0 Nov 23 02:22 /home/jlmpi/umasktest
+]3008;end=3365c1c4-84f7-4986-b374-3e32a1a0f5ec;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=94cceb8a-b514-417d-bcef-6b3387e9553d;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=028f539c-363b-418d-84a7-b72612ca4d7d;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo find / -xdev -perm -4000 2> [K/dev/null | tee ~/suid-binaries.txt
+[?2004l]3008;start=b40a853c-0077-4c6f-b550-cdd54bfe3013;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/fusermount3
+/usr/bin/umount
+/usr/bin/su
+/usr/bin/mount
+/usr/bin/sudo.ws
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/cargo/bin/sudo
+/usr/lib/cargo/bin/su
+/usr/lib/openssh/ssh-keysign
+/usr/lib/landscape/apt-update
+]3008;end=b40a853c-0077-4c6f-b550-cdd54bfe3013;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ cat ?[Kcat ~/suid-binaries.txt 
+[?2004l]3008;start=9e995539-677e-4aae-9ab2-75478dbf95ef;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\/usr/bin/passwd
+/usr/bin/gpasswd
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/fusermount3
+/usr/bin/umount
+/usr/bin/su
+/usr/bin/mount
+/usr/bin/sudo.ws
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/cargo/bin/sudo
+/usr/lib/cargo/bin/su
+/usr/lib/openssh/ssh-keysign
+/usr/lib/landscape/apt-update
+]3008;end=9e995539-677e-4aae-9ab2-75478dbf95ef;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=f7f5a691-8872-4442-b041-033f76fc0453;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=af239a3f-3272-4be4-985a-5927d79b1713;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=d60af46a-29d9-48f2-bdb5-83052c4d0b0c;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=14ed4991-ae57-412e-a89c-d609f0711128;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=a0153b3a-b3e8-4dd4-a1fa-6022155f2b00;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=825e56b3-d83d-43e9-8944-f0a30e9ef356;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=fe2b01de-80f6-4b50-876c-25fdefd8666a;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=d96d1c59-6981-46f8-9fdf-1505d133f25a;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo find / -xdev -type f -perm -0002 2> [K/dev/null | tee ~/world-writable.txt
+[?2004l]3008;start=88268153-215d-4550-aedb-d388ee78d5d3;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=88268153-215d-4550-aedb-d388ee78d5d3;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ cat ~/world-writable.txt 
+[?2004l]3008;start=7ce1c6e6-7016-4d10-8a4b-776d0d55f940;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=7ce1c6e6-7016-4d10-8a4b-776d0d55f940;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl list-units --type=service --state=running | head -30
+[?2004l]3008;start=b6c40c2f-2039-44ec-91cd-562117b2ff99;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  chrony.service              loaded active running chrony, an NTP client/server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  rsyslog.service             loaded active running System Logging Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  user@1000.service           loaded active running User Manager for UID 1000
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+12 loaded units listed.
+]3008;end=b6c40c2f-2039-44ec-91cd-562117b2ff99;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ system status cron
+[?2004l]3008;start=ea7dd288-1411-4de5-be5c-024b04ba96c0;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\Command 'system' not found, did you mean:
+  command 'system3' from deb simh (3.8.1-6.3)
+Try: sudo apt install <deb name>
+]3008;end=ea7dd288-1411-4de5-be5c-024b04ba96c0;exit=failure;status=127\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ system status cron[1@c[1@t[1@l
+[?2004l]3008;start=e0571640-11ce-4993-91dc-78970e9e8d81;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=[0;1;32m●[0m cron.service - Regular background program processing daemon[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/cron.service\/usr/lib/systemd/system/cron.service]8;;\; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-11-23 02:11:49 EST; 31min ago[m
+ Invocation: 8d6cdf1fb2af463ba34ac9bb170e3a80[m
+       Docs: ]8;;man:cron(8)\man:cron(8)]8;;\[m]8;;\
+   Main PID: 132 (cron)[m
+      Tasks: 1[0;38:5:245m (limit: 19133)[0m[m
+     Memory: 4M (peak: 6.2M)[m
+        CPU: 18ms[m
+     CGroup: /system.slice/cron.service[m
+             └─[0;38:5:245m132 /usr/sbin/cron -f -P[0m[m
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started cron.service - Regular background program processing daemon.[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 (cron)[132]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mcron.service: Referenced but unset environment variable evaluates to an em[m[7m>[27m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (pidfile fd = 3)[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (Running @reboot jobs)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[507]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session closed for user root[m
+[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K [K^X^X[K^J^J[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[K^J^J[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KESCESC[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KESCESC[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KDD[H[2J[H[H[2J[H[0;1;32m●[0m cron.service - Regular background program processing daemon[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/cron.service\/usr/lib/systemd/system/cron.service]8;;\; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-11-23 02:11:49 EST; 31min ago[m
+ Invocation: 8d6cdf1fb2af463ba34ac9bb170e3a80[m
+       Docs: ]8;;man:cron(8)\man:cron(8)]8;;\[m]8;;\
+   Main PID: 132 (cron)[m
+      Tasks: 1[0;38:5:245m (limit: 19133)[0m[m
+     Memory: 4M (peak: 6.2M)[m
+        CPU: 18ms[m
+     CGroup: /system.slice/cron.service[m
+             └─[0;38:5:245m132 /usr/sbin/cron -f -P[0m[m
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started cron.service - Regular background program processing daemon.[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 (cron)[132]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mcron.service: Referenced but unset environment variable evaluates to an em[m[7m>[27m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (pidfile fd = 3)[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (Running @reboot jobs)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[507]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session closed for user root[m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [KESCESC[KESCESC[K [K^X^X[K^O^O[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[7mlines 1-19/19 (END)[27m[K[K[?1l>]3008;end=e0571640-11ce-4993-91dc-78970e9e8d81;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo systemctl stop cron
+[?2004l]3008;start=91ac7cc8-e89e-4988-9db6-c43eed66fffb;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[sudo: authenticate] Password: **********          
+]3008;end=91ac7cc8-e89e-4988-9db6-c43eed66fffb;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo systemctl disable cron
+[?2004l]3008;start=2d331f47-c0ad-451d-ad1f-e395d4d30259;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\Synchronizing state of cron.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install disable cron
+Removed '/etc/systemd/system/multi-user.target.wants/cron.service'.
+]3008;end=2d331f47-c0ad-451d-ad1f-e395d4d30259;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl status cron
+[?2004l]3008;start=960030d0-c519-4716-9975-72b94bb32719;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=○ cron.service - Regular background program processing daemon[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/cron.service\/usr/lib/systemd/system/cron.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+       Docs: ]8;;man:cron(8)\man:cron(8)]8;;\[m]8;;\
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started cron.service - Regular background program processing daemon.[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 (cron)[132]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mcron.service: Referenced but unset environment variable evaluates to an em[m[7m>[27m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (pidfile fd = 3)[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (Running @reboot jobs)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[507]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session closed for user root[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: Stopping cron.service - Regular background program processing daemon...[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: cron.service: Deactivated successfully.[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: Stopped cron.service - Regular background program processing daemon.[m
+[7mlines 1-15/15 (END)[27m[K[K[?1l>]3008;end=960030d0-c519-4716-9975-72b94bb32719;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl l[K[K status getty@tty1.service 
+Display all 464 possibilities? (y or n)
+jlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl status getty@tty1.service [K[K[K[K[K[K[K[K[K
+[?2004l]3008;start=d663337b-67f5-404f-bd2b-76f24012a03c;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=[0;1;32m●[0m getty@tty1.service - Getty on tty1[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/getty@.service\/usr/lib/systemd/system/getty@.service]8;;\; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-11-23 02:11:49 EST; 35min ago[m
+ Invocation: ea0fd0662c1a4dfe8f9c147120811e0b[m
+       Docs: ]8;;man:agetty(8)\man:agetty(8)]8;;\[m]8;;\
+             ]8;;man:systemd-getty-generator(8)\man:systemd-getty-generator(8)]8;;\[m]8;;\
+             ]8;;https://0pointer.de/blog/projects/serial-console.html\https://0pointer.de/blog/projects/serial-console.html]8;;\[m]8;;\
+   Main PID: 217 (agetty)[m
+      Tasks: 1[0;38:5:245m (limit: 19133)[0m[m
+     Memory: 332K (peak: 1.7M)[m
+        CPU: 7ms[m
+     CGroup: /system.slice/system-getty.slice/getty@tty1.service[m
+             └─[0;38:5:245m217 /usr/sbin/agetty --noreset --noclear --issue-file=/etc/issue:/etc/issue.d:/run/issue.d:/usr/lib/issu[m[7m>[27m
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started getty@tty1.service - Getty on tty1.[m
+[7mlines 1-15/15 (END)[27m[K[K[?1l>]3008;end=d663337b-67f5-404f-bd2b-76f24012a03c;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo systen[Kmctl stop getty@tty1.service [K[K[K[K[K[K[K[K[K
+[?2004l]3008;start=f05a04e4-952b-4874-a871-b0f19282bad7;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=f05a04e4-952b-4874-a871-b0f19282bad7;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo systemctl stop getty@tty1[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@d[1@i[1@a[1@b[1@l[1@e[1P[1P[1P[1P[1@s[1@a[1@b[1@l[1@e
+[?2004l]3008;start=1b3e4e3c-54cf-4fda-b7a0-8c6cbc7570f6;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\Removed '/etc/systemd/system/getty.target.wants/getty@tty1.service'.
+]3008;end=1b3e4e3c-54cf-4fda-b7a0-8c6cbc7570f6;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=1dbe2479-e675-413a-a8cb-dd060cb09bae;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=47bd2e5e-efe6-4620-be35-d5e75c5f120f;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl sts[Katus cron
+[?2004l]3008;start=1a04236f-0d42-4f3e-be03-4385287358df;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=○ cron.service - Regular background program processing daemon[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/cron.service\/usr/lib/systemd/system/cron.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+       Docs: ]8;;man:cron(8)\man:cron(8)]8;;\[m]8;;\
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started cron.service - Regular background program processing daemon.[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 (cron)[132]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mcron.service: Referenced but unset environment variable evaluates to an em[m[7m>[27m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (pidfile fd = 3)[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 cron[132]: (CRON) INFO (Running @reboot jobs)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[507]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)[m
+Nov 23 02:17:01 DESKTOP-7BR8OG8 CRON[505]: pam_unix(cron:session): session closed for user root[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: Stopping cron.service - Regular background program processing daemon...[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: cron.service: Deactivated successfully.[m
+Nov 23 02:44:42 DESKTOP-7BR8OG8 systemd[1]: Stopped cron.service - Regular background program processing daemon.[m
+[7mlines 1-15/15 (END)[27m[K[K[?1l>]3008;end=1a04236f-0d42-4f3e-be03-4385287358df;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=0d7d4016-6f97-485d-bbd9-f3a2e18bafc6;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=c2fae7f8-35d1-465e-b750-f749a03e8aad;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ 
+[?2004l]3008;end=0a0f8cc1-0262-4f82-8249-c58968256594;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl status getty!@[K[K@tty1
+[?2004l]3008;start=2eb1f101-768c-412f-bdab-7cee7f3244a6;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=○ getty@tty1.service - Getty on tty1[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/getty@.service\/usr/lib/systemd/system/getty@.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: inactive (dead)[m
+       Docs: ]8;;man:agetty(8)\man:agetty(8)]8;;\[m]8;;\
+             ]8;;man:systemd-getty-generator(8)\man:systemd-getty-generator(8)]8;;\[m]8;;\
+             ]8;;https://0pointer.de/blog/projects/serial-console.html\https://0pointer.de/blog/projects/serial-console.html]8;;\[m]8;;\
+[m
+Nov 23 02:11:49 DESKTOP-7BR8OG8 systemd[1]: Started getty@tty1.service - Getty on tty1.[m
+Nov 23 02:47:27 DESKTOP-7BR8OG8 systemd[1]: Stopping getty@tty1.service - Getty on tty1...[m
+Nov 23 02:47:27 DESKTOP-7BR8OG8 systemd[1]: getty@tty1.service: Deactivated successfully.[m
+Nov 23 02:47:27 DESKTOP-7BR8OG8 systemd[1]: Stopped getty@tty1.service - Getty on tty1.[m
+[K[?1l>]3008;end=2eb1f101-768c-412f-bdab-7cee7f3244a6;exit=failure;status=3\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ [Kjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo nano .ety[K[K[K[K/etv[Kc/ssh/sshd_config
+[?2004l]3008;start=8cb6db59-4f23-458c-a806-c363b38e6197;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?2004h[?1049h[22;0;0t[1;50r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[48;91H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 8.7.1                                                                         /etc/ssh/sshd_config                                                                                   [1;191H(B[m[49d(B[0;7m^G(B[m Help[49;18H(B[0;7m^O(B[m Write Out     (B[0;7m^F(B[m Where Is[52G(B[0;7m^K(B[m Cut[49;69H(B[0;7m^T(B[m Execute[86G(B[0;7m^C(B[m Location[103G(B[0;7mM-U(B[m Undo[49;120H(B[0;7mM-A(B[m Set Mark     (B[0;7mM-](B[m To Bracket   (B[0;7mM-B(B[m Previous     (B[0;7m◂(B[m Back[50d(B[0;7m^X(B[m Exit[50;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Paste[50;69H(B[0;7m^J(B[m Justify[86G(B[0;7m^/(B[m Go To Line    (B[0;7mM-E(B[m Redo[50;120H(B[0;7mM-6(B[m Copy[50;137H(B[0;7m^B(B[m Where Was     (B[0;7mM-F(B[m Next[50;171H(B[0;7m▸(B[m Forward[2d[?12l[?25h[?25l[48d[J[50d[?12l[?25h[50;1H[?1049l[23;0;0t[?1l>[?2004l]3008;end=8cb6db59-4f23-458c-a806-c363b38e6197;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ ls -l /etc/ssh/
+[?2004l]3008;start=dbe01a35-50b5-4cb8-8f67-950d6feaee2c;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\total 8
+-rw-r--r-- 1 root root 1637 Jul 18 12:04 ssh_config
+drwxr-xr-x 2 root root 4096 Aug 27 10:11 [0m[01;34mssh_config.d[0m
+]3008;end=dbe01a35-50b5-4cb8-8f67-950d6feaee2c;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudp [K[Ko apt pdate
+[?2004l]3008;start=e098cfaa-683d-4004-a185-ac13460b30dc;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[1;31mError: [0m[1mInvalid operation pdate[0m
+]3008;end=e098cfaa-683d-4004-a185-ac13460b30dc;exit=failure;status=100\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo apt pdate[1@i[1P[1@u[C[1P[1@p
+[?2004l]3008;start=4ee4890c-04a4-4541-bee1-cbe041f7afde;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[33m0% [Working][0m            Hit:1 http://archive.ubuntu.com/ubuntu resolute InRelease
+[33m0% [Connecting to pkg.osquery.io] [Connecting to aquasecurity.github.io] [Connecting to security.ubuntu.com][0m[33m0% [Connecting to pkg.osquery.io] [Connecting to aquasecurity.github.io] [Waiting for headers] [Connecting to security.ubuntu.com][0m                                                                                                                                  Get:2 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+[33m0% [Connecting to pkg.osquery.io] [Connecting to aquasecurity.github.io] [2 InRelease 1140 B/137 kB 1%] [Connecting to security.ubuntu.com][0m[33m                                                                                                                                           0% [Connecting to pkg.osquery.io] [Connecting to aquasecurity.github.io] [Connecting to security.ubuntu.com][0m[33m0% [Connecting to pkg.osquery.io] [Connecting to aquasecurity.github.io] [Waiting for headers] [Connecting to security.ubuntu.com][0m                                                                                                                                  Get:3 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+[33m0% [Connecting to pkg.osquery.io (3.162.163.74)] [Connecting to aquasecurity.github.io] [3 InRelease 4036 B/137 kB 3%] [Connecting to security.ubuntu.com][0m[33m                                                                                                                                                          0% [Connected to pkg.osquery.io (3.162.163.74)] [Connecting to aquasecurity.github.io] [Connecting to security.ubuntu.com][0m[33m0% [Connected to pkg.osquery.io (3.162.163.74)] [Connecting to aquasecurity.github.io] [Waiting for headers] [Connecting to security.ubuntu.com][0m                                                                                                                                                Get:4 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [900 kB]
+[33m0% [Waiting for headers] [Connecting to aquasecurity.github.io (185.199.108.153)] [4 Packages 1209 B/900 kB 0%] [Connecting to security.ubuntu.com][0m[33m                                                                                                                                                   0% [Waiting for headers] [4 Packages 347 kB/900 kB 39%] [Connecting to security.ubuntu.com][0m[33m0% [Waiting for headers] [Waiting for headers] [Connecting to security.ubuntu.com (91.189.91.83)][0m                                                                                                 Get:6 http://archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [200 kB]
+[33m0% [Waiting for headers] [6 Translation-en 146 kB/200 kB 73%] [Connecting to security.ubuntu.com (91.189.91.83)][0m[33m0% [4 Packages store 0 B] [Waiting for headers] [6 Translation-en 146 kB/200 kB 73%] [Connecting to security.ubuntu.com (91.189.91.83)][0m[33m                                                                                                                                       0% [4 Packages store 0 B] [Waiting for headers] [Waiting for headers] [Waiting for headers][0m                                                                                           Get:7 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Components [110 kB]
+[33m0% [4 Packages store 0 B] [Waiting for headers] [7 Components-amd64 11.7 kB/110 kB 11%] [Waiting for headers][0m[33m                                                                                                             0% [4 Packages store 0 B] [Waiting for headers] [Waiting for headers] [Waiting for headers][0m                                                                                           Get:8 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [393 kB]
+[33m0% [4 Packages store 0 B] [Waiting for headers] [8 Packages 20.5 kB/393 kB 5%] [Waiting for headers][0m[33m                                                                                                    0% [4 Packages store 0 B] [Waiting for headers] [Waiting for headers] [Waiting for headers][0m                                                                                           Get:9 http://archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [124 kB]
+[33m0% [4 Packages store 0 B] [Waiting for headers] [9 Translation-en 9377 B/124 kB 8%] [Waiting for headers][0m                                                                                                         Hit:10 https://aquasecurity.github.io/trivy-repo/deb resolute InRelease
+[33m                                                                                                         0% [4 Packages store 0 B] [9 Translation-en 44.1 kB/124 kB 36%] [Waiting for headers][0m[33m0% [4 Packages store 0 B] [9 Translation-en 124 kB/124 kB 100%] [Waiting for headers][0m                                                                                     Get:11 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Components [201 kB]
+[33m0% [4 Packages store 0 B] [11 Components-amd64 18.2 kB/201 kB 9%] [Waiting for headers][0m[33m                                                                                       0% [4 Packages store 0 B] [Waiting for headers] [Waiting for headers][0m                                                                     Get:12 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [627 kB]
+[33m0% [4 Packages store 0 B] [12 Packages 14.2 kB/627 kB 2%] [Waiting for headers][0m                                                                               Get:13 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+[33m0% [4 Packages store 0 B] [12 Packages 420 kB/627 kB 67%] [13 InRelease 2588 B/137 kB 2%][0m[33m                                                                                         0% [4 Packages store 0 B] [Waiting for headers] [13 InRelease 14.2 kB/137 kB 10%][0m                                                                                 Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [130 kB]
+[33m0% [4 Packages store 0 B] [14 Translation-en 13.7 kB/130 kB 11%] [13 InRelease 14.2 kB/137 kB 10%][0m[33m                                                                                                  0% [4 Packages store 0 B] [Waiting for headers] [13 InRelease 14.2 kB/137 kB 10%][0m                                                                                 Get:15 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Components [1056 B]
+[33m0% [4 Packages store 0 B] [15 Components-amd64 1056 B/1056 B 100%] [13 InRelease 14.2 kB/137 kB 10%][0m[33m                                                                                                    0% [4 Packages store 0 B] [13 InRelease 14.2 kB/137 kB 10%][0m[33m                                                           0% [13 InRelease 14.2 kB/137 kB 10%][0m[33m0% [6 Translation-en store 0 B] [13 InRelease 14.2 kB/137 kB 10%][0m[33m                                                                 0% [13 InRelease 22.9 kB/137 kB 17%][0m[33m0% [7 Components-amd64 store 0 B] [13 InRelease 22.9 kB/137 kB 17%][0m[33m                                                                   0% [13 InRelease 40.2 kB/137 kB 29%][0m[33m0% [8 Packages store 0 B] [13 InRelease 43.1 kB/137 kB 31%][0m[33m                                                           0% [13 InRelease 54.7 kB/137 kB 40%][0m[33m0% [9 Translation-en store 0 B] [13 InRelease 54.7 kB/137 kB 40%][0m[33m                                                                 0% [13 InRelease 62.0 kB/137 kB 45%][0m[33m0% [11 Components-amd64 store 0 B] [13 InRelease 63.4 kB/137 kB 46%][0m[33m0% [Connecting to pkg.osquerypackages.com] [13 InRelease 110 kB/137 kB 80%][0m[33m0% [12 Packages store 0 B] [Connecting to pkg.osquerypackages.com] [13 InRelease 110 kB/137 kB 80%][0m[33m                                                                                                   0% [12 Packages store 0 B] [Connecting to pkg.osquerypackages.com][0m[33m0% [12 Packages store 0 B] [Connecting to pkg.osquerypackages.com][0m[33m                                                                  0% [Connecting to pkg.osquerypackages.com] [Waiting for headers][0m[33m0% [14 Translation-en store 0 B] [Connecting to pkg.osquerypackages.com] [Waiting for headers][0m[33m                                                                                              0% [Connecting to pkg.osquerypackages.com] [Waiting for headers][0m[33m0% [15 Components-amd64 store 0 B] [Connecting to pkg.osquerypackages.com] [Waiting for headers][0m[33m                                                                                                0% [Connecting to pkg.osquerypackages.com] [Waiting for headers][0m                                                                Get:16 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [721 kB]
+[33m0% [Connecting to pkg.osquerypackages.com] [16 Packages 1209 B/721 kB 0%][0m[33m                                                                         0% [Waiting for headers][0m[33m0% [16 Packages store 0 B] [Waiting for headers][0m                                                Get:17 http://security.ubuntu.com/ubuntu resolute-security/main Translation-en [158 kB]
+[33m0% [16 Packages store 0 B] [Waiting for headers] [17 Translation-en 1209 B/158 kB 1%][0m[33m                                                                                     0% [Waiting for headers] [17 Translation-en 155 kB/158 kB 98%][0m[33m                                                              0% [Waiting for headers] [Waiting for headers][0m                                              Get:18 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Components [46.7 kB]
+[33m0% [Waiting for headers] [18 Components-amd64 18.0 kB/46.7 kB 39%][0m[33m0% [17 Translation-en store 0 B] [Waiting for headers] [18 Components-amd64 18.0 kB/46.7 kB 39%][0m[33m                                                                                                0% [17 Translation-en store 0 B] [Waiting for headers] [Waiting for headers][0m                                                                            Get:19 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [222 kB]
+[33m0% [17 Translation-en store 0 B] [Waiting for headers] [19 Packages 11.9 kB/222 kB 5%][0m[33m                                                                                      0% [17 Translation-en store 0 B] [Waiting for headers] [Waiting for headers][0m                                                                            Get:20 http://security.ubuntu.com/ubuntu resolute-security/universe Translation-en [72.7 kB]
+[33m0% [17 Translation-en store 0 B] [Waiting for headers] [20 Translation-en 15.7 kB/72.7 kB 22%][0m[33m                                                                                              0% [17 Translation-en store 0 B] [Waiting for headers] [Waiting for headers][0m                                                                            Get:21 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Components [62.8 kB]
+[33m0% [17 Translation-en store 1965 kB] [Waiting for headers] [21 Components-amd64 5003 B/62.8 kB 8%][0m[33m                                                                                                  0% [Waiting for headers] [21 Components-amd64 5003 B/62.8 kB 8%][0m[33m0% [18 Components-amd64 store 0 B] [Waiting for headers] [21 Components-amd64 10.8 kB/62.8 kB 17%][0m[33m                                                                                                  0% [18 Components-amd64 store 0 B] [Waiting for headers][0m[33m                                                        0% [Waiting for headers][0m[33m0% [19 Packages store 0 B] [Waiting for headers][0m[33m                                                0% [Waiting for headers][0m[33m0% [20 Translation-en store 0 B] [Waiting for headers][0m[33m                                                      0% [Waiting for headers][0m[33m0% [21 Components-amd64 store 0 B] [Waiting for headers][0m[33m                                                        0% [Waiting for headers][0m                        Hit:5 https://pkg.osquerypackages.com/deb deb InRelease
+[33m                        0% [Working][0m[33m100% [Working][0m              Fetched 4379 kB in 1s (3859 kB/s)
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 4%Reading package lists... 4%Reading package lists... 7%Reading package lists... 7%Reading package lists... 56%Reading package lists... 56%Reading package lists... 78%Reading package lists... 78%Reading package lists... 78%Reading package lists... 78%Reading package lists... 79%Reading package lists... 79%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 83%Reading package lists... 83%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 86%Reading package lists... 86%Reading package lists... 89%Reading package lists... 89%Reading package lists... 90%Reading package lists... 90%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 91%Reading package lists... 93%Reading package lists... 93%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%                             Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                [1m44 packages can be upgraded. Run 'apt list --upgradable' to see them.
+[0m]3008;end=4ee4890c-04a4-4541-bee1-cbe041f7afde;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo apt install openssh-server y[K-y
+[?2004l]3008;start=3bda7517-4752-4f35-b0f3-97f5def7c47b;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\Reading package lists... 0%Reading package lists... 100%                              Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%                                Reading state information... 0%Reading state information... 0%                                Solving dependencies... 0%Solving dependencies... 10%                            Installing:
+[32m  openssh-server
+[0m
+Installing dependencies:
+[32m  libwrap0  ncurses-term  openssh-sftp-server  ssh-import-id
+[0m
+Suggested packages:
+  molly-guard  monkeysphere  ssh-askpass  ufw
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 44
+  Download size: 998 kB
+  Space needed: 7694 kB / 1019 GB available
+
+[33m0% [Working][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m[33m0% [Waiting for headers][0m                        Get:1 http://archive.ubuntu.com/ubuntu resolute/main amd64 libwrap0 amd64 7.6.q-36build2 [48.5 kB]
+[33m0% [1 libwrap0 2606 B/48.5 kB 5%][0m[33m                                 8% [Working][0m            Get:2 http://archive.ubuntu.com/ubuntu resolute/main amd64 ncurses-term all 6.6+20251231-1 [280 kB]
+[33m8% [2 ncurses-term 2604 B/280 kB 1%][0m[33m                                    34% [Working][0m             Get:3 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 openssh-sftp-server amd64 1:10.2p1-2ubuntu3.8 [37.4 kB]
+[33m35% [3 openssh-sftp-server 4054 B/37.4 kB 11%][0m[33m                                              41% [Working][0m             Get:4 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 openssh-server amd64 1:10.2p1-2ubuntu3.8 [622 kB]
+[33m42% [4 openssh-server 5500 B/622 kB 1%][0m[33m                                       95% [Working][0m             Get:5 http://archive.ubuntu.com/ubuntu resolute/main amd64 ssh-import-id all 5.11-0ubuntu4 [10.2 kB]
+[33m96% [5 ssh-import-id 6950 B/10.2 kB 68%][0m[33m                                        100% [Working][0m              Fetched 998 kB in 31s (32.6 kB/s)
+Preconfiguring packages ...
+
+7[0;49r8[1ASelecting previously unselected package libwrap0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36562 files and directories currently installed.)
+Preparing to unpack .../libwrap0_7.6.q-36build2_amd64.deb ...
+7[50;0f[42m[30mProgress: [  0%][49m[39m [                                                                                                                                                                          ] 87[50;0f[42m[30mProgress: [  5%][49m[39m [████████                                                                                                                                                                  ] 8Unpacking libwrap0:amd64 (7.6.q-36build2) ...
+7[50;0f[42m[30mProgress: [ 10%][49m[39m [████████████████▏                                                                                                                                                         ] 8Selecting previously unselected package ncurses-term.
+Preparing to unpack .../ncurses-term_6.6+20251231-1_all.deb ...
+7[50;0f[42m[30mProgress: [ 14%][49m[39m [████████████████████████▎                                                                                                                                                 ] 8Unpacking ncurses-term (6.6+20251231-1) ...
+7[50;0f[42m[30mProgress: [ 19%][49m[39m [████████████████████████████████▍                                                                                                                                         ] 8Selecting previously unselected package openssh-sftp-server.
+Preparing to unpack .../openssh-sftp-server_1%3a10.2p1-2ubuntu3.8_amd64.deb ...
+7[50;0f[42m[30mProgress: [ 24%][49m[39m [████████████████████████████████████████▍                                                                                                                                 ] 8Unpacking openssh-sftp-server (1:10.2p1-2ubuntu3.8) ...
+7[50;0f[42m[30mProgress: [ 29%][49m[39m [████████████████████████████████████████████████▌                                                                                                                         ] 8Selecting previously unselected package openssh-server.
+Preparing to unpack .../openssh-server_1%3a10.2p1-2ubuntu3.8_amd64.deb ...
+7[50;0f[42m[30mProgress: [ 33%][49m[39m [████████████████████████████████████████████████████████▋                                                                                                                 ] 8Unpacking openssh-server (1:10.2p1-2ubuntu3.8) ...
+7[50;0f[42m[30mProgress: [ 38%][49m[39m [████████████████████████████████████████████████████████████████▊                                                                                                         ] 8Selecting previously unselected package ssh-import-id.
+Preparing to unpack .../ssh-import-id_5.11-0ubuntu4_all.deb ...
+7[50;0f[42m[30mProgress: [ 43%][49m[39m [████████████████████████████████████████████████████████████████████████▊                                                                                                 ] 8Unpacking ssh-import-id (5.11-0ubuntu4) ...
+7[50;0f[42m[30mProgress: [ 48%][49m[39m [████████████████████████████████████████████████████████████████████████████████▉                                                                                         ] 8Setting up openssh-sftp-server (1:10.2p1-2ubuntu3.8) ...
+7[50;0f[42m[30mProgress: [ 52%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████                                                                                 ] 87[50;0f[42m[30mProgress: [ 57%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                        ] 8Setting up ssh-import-id (5.11-0ubuntu4) ...
+7[50;0f[42m[30mProgress: [ 62%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                ] 87[50;0f[42m[30mProgress: [ 67%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                        ] 8Setting up libwrap0:amd64 (7.6.q-36build2) ...
+7[50;0f[42m[30mProgress: [ 71%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                ] 87[50;0f[42m[30mProgress: [ 76%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                        ] 8Setting up ncurses-term (6.6+20251231-1) ...
+7[50;0f[42m[30mProgress: [ 81%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                ] 87[50;0f[42m[30mProgress: [ 86%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                        ] 8Setting up openssh-server (1:10.2p1-2ubuntu3.8) ...
+7[50;0f[42m[30mProgress: [ 90%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                ] 8Creating config file /etc/ssh/sshd_config with new version
+Creating SSH2 RSA key; this may take some time ...
+3072 SHA256:4Xik/bV9vD4UHJqhwJrOlniZSsgxVh0i2RPBk1HnOPE root@DESKTOP-7BR8OG8 (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:Pu5J/E+2A4RFZCRSVW4FLlwOXNjTOzAiVAywh1mnAQk root@DESKTOP-7BR8OG8 (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:Bk5NsAUbUNQD/iIvASlz/6zv8NhHmlTSyY5fz0RJXgM root@DESKTOP-7BR8OG8 (ED25519)
+Creating user 'sshd' (sshd user) with UID 986 and GID 65534.
+Created symlink '/etc/systemd/system/sockets.target.wants/ssh.socket' → '/usr/lib/systemd/system/ssh.socket'.
+Created symlink '/etc/systemd/system/ssh.service.requires/ssh.socket' → '/usr/lib/systemd/system/ssh.socket'.
+Created symlink '/etc/systemd/system/ssh.service.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+Created symlink '/etc/systemd/system/sshd.service.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+Created symlink '/etc/systemd/system/sshd@.service.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+Created symlink '/etc/systemd/system/ssh.socket.wants/sshd-keygen.service' → '/usr/lib/systemd/system/sshd-keygen.service'.
+7[50;0f[42m[30mProgress: [ 95%][49m[39m [█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉        ] 8Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.7) ...
+
+7[0;50r8[1A[J]3008;end=3bda7517-4752-4f35-b0f3-97f5def7c47b;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo apt install openssh-server -yupdate[K[1P[C[C[C[C[Cls -l /etc/ssh/
+[?2004l]3008;start=0503972d-24b3-4fab-882c-31019bb4990c;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\total 616
+-rw-r--r-- 1 root root 581286 Oct  8 12:36 moduli
+-rw-r--r-- 1 root root   1637 Jul 18 12:04 ssh_config
+drwxr-xr-x 2 root root   4096 Aug 27 10:11 [0m[01;34mssh_config.d[0m
+-rw------- 1 root root    513 Nov 23 02:56 ssh_host_ecdsa_key
+-rw-r--r-- 1 root root    182 Nov 23 02:56 ssh_host_ecdsa_key.pub
+-rw------- 1 root root    411 Nov 23 02:56 ssh_host_ed25519_key
+-rw-r--r-- 1 root root    102 Nov 23 02:56 ssh_host_ed25519_key.pub
+-rw------- 1 root root   2610 Nov 23 02:56 ssh_host_rsa_key
+-rw-r--r-- 1 root root    574 Nov 23 02:56 ssh_host_rsa_key.pub
+-rw-r--r-- 1 root root    342 Dec  7  2020 ssh_import_id
+-rw-r--r-- 1 root root   4307 Oct  8 12:36 sshd_config
+drwxr-xr-x 2 root root   4096 Oct  8 12:36 [01;34msshd_config.d[0m
+]3008;end=0503972d-24b3-4fab-882c-31019bb4990c;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ ls -l /etc/ssh/sudo apt install openssh-server -yupdate[K[1P[C[C[C[C[Cls -l /etc/ssh/sudo nano /etc/ssh/sshd_config
+[?2004l]3008;start=4f3d4554-55e4-4911-b327-3f8fc024d18a;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?2004h[?1049h[22;0;0t[1;50r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[48;90H(B[0;7m[ Reading... ](B[m[48;88H(B[0;7m[ Read 145 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                                                         /etc/ssh/sshd_config                                                                                   [1;191H(B[m[49d(B[0;7m^G(B[m Help[49;18H(B[0;7m^O(B[m Write Out     (B[0;7m^F(B[m Where Is[52G(B[0;7m^K(B[m Cut[49;69H(B[0;7m^T(B[m Execute[86G(B[0;7m^C(B[m Location[103G(B[0;7mM-U(B[m Undo[49;120H(B[0;7mM-A(B[m Set Mark     (B[0;7mM-](B[m To Bracket   (B[0;7mM-B(B[m Previous     (B[0;7m◂(B[m Back[50d(B[0;7m^X(B[m Exit[50;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Paste[50;69H(B[0;7m^J(B[m Justify[86G(B[0;7m^/(B[m Go To Line    (B[0;7mM-E(B[m Redo[50;120H(B[0;7mM-6(B[m Copy[50;137H(B[0;7m^B(B[m Where Was     (B[0;7mM-F(B[m Next[50;171H(B[0;7m▸(B[m Forward[3d[36m# This is the sshd server system-wide configuration file.  See[4d# sshd_config(5) for more information.[6d# This sshd was compiled with PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games[8d# The strategy used for options in the default sshd_config shipped with[9d# OpenSSH is to specify options with their default value where[10d# possible, but leave them commented.  Uncommented options override the[11d# default value.[13d# In general, the first uncommented definition of an option takes precedence.[14d# For options that accept multiple values, like 'Port', subsequent definitions[15d# are appended to the configuration.[16d#[17d# Note that the above implies that configuration options from snippets in[18d# /etc/ssh/sshd_config.d/*.conf take precedence over those defined in this[19d# file. In addition, configuration snippet files are processed in lexical[20d# order, so options defined in files with names that sort earlier take[21d# precedence.[22d#[23d# Such configuration snippets may be present in default installations of[24d# Ubuntu.[25d[39m(B[mInclude /etc/ssh/sshd_config.d/*.conf[27d[36m# When systemd socket activation is used (the default), the socket[28d# configuration must be re-generated after changing Port, AddressFamily, or[29d# ListenAddress.[30d#[31d# For changes to take effect, run:[32d#[33d#   systemctl daemon-reload[34d#   systemctl restart ssh.socket[35d#[36d#Port 22[37d#AddressFamily any[38d#ListenAddress 0.0.0.0[39d#ListenAddress ::[41d#HostKey /etc/ssh/ssh_host_rsa_key[42d#HostKey /etc/ssh/ssh_host_ecdsa_key[43d#HostKey /etc/ssh/ssh_host_ed25519_key[45d# Ciphers and keying[46d#RekeyLimit default none[2d[39m(B[m[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[A[?25l[?12l[?25h[C[?25l[?12l[?25h[?25l[?12l[?25h[C[?25l[?12l[?25h[16d[?25l[48d[K[?12l[?25h[17;2H[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26d[?25l[?12l[?25h[27;2H[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30d[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h[33d[?25l[?12l[?25h[34d[?25l[?12l[?25h[35d[?25l[?12l[?25h[36d[?25l[?12l[?25h[37d[?25l[?12l[?25h[38d[?25l[?12l[?25h[39d[?25l[?12l[?25h[40d[?25l[?12l[?25h[41;2H[?25l[?12l[?25h[42d[?25l[?12l[?25h[43d[?25l[?12l[?25h[44d[?25l[?12l[?25h[45;2H[?25l[?12l[?25h[46d[?25l[?12l[?25h[47d[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Logging#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#SyslogFacility AUTH#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#LogLevel INFO#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Authentication:#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#LoginGraceTime 2m#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PermitRootLogin prohibit-password#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#StrictModes yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#MaxAuthTries 6#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#MaxSessions 10#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PubkeyAuthentication yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Expect .ssh/authorized_keys2 to be disregarded by default in future.#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AuthorizedKeysFile[38;5;208m     [36m.ssh/authorized_keys .ssh/authorized_keys2#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AuthorizedPrincipalsFile none#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AuthorizedKeysCommand none#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AuthorizedKeysCommandUser nobody#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#HostbasedAuthentication no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Change to yes if you don't trust ~/.ssh/known_hosts for#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# HostbasedAuthentication#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#IgnoreUserKnownHosts no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Don't read the user's ~/.rhosts and ~/.shosts files#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#IgnoreRhosts yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# To disable tunneled clear text passwords, change to "no" here!#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PasswordAuthentication yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PermitEmptyPasswords no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Change to "yes" to enable keyboard-interactive authentication.  Depending on#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# the system's configuration, this may involve passwords, challenge-response,#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# one-time passwords or some combination of these and other methods.#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Beware issues with some PAM modules and threads.#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1HKbdInteractiveAuthentication noK[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Kerberos options#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#KerberosAuthentication no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#KerberosOrLocalPasswd yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#KerberosTicketCleanup yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#KerberosGetAFSToken no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# GSSAPI options#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#GSSAPIAuthentication no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#GSSAPICleanupCredentials yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#GSSAPIStrictAcceptorCheck yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#GSSAPIKeyExchange no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# Set this to 'yes' to enable PAM authentication, account processing,#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# and session processing. If this is enabled, PAM authentication will#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# be allowed through the KbdInteractiveAuthentication and#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# PasswordAuthentication.  Depending on your PAM configuration,#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# PAM authentication via KbdInteractiveAuthentication may bypass#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# the setting of "PermitRootLogin prohibit-password".#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# If you just want the PAM account and session checks to run without#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# PAM authentication, then enable this but set PasswordAuthentication#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m# and KbdInteractiveAuthentication to 'no'.#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1HUsePAM yesU[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AllowAgentForwarding yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#AllowTcpForwarding yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#GatewayPorts no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1HX11Forwarding yesX[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#X11DisplayOffset 10#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#X11UseLocalhost yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PermitTTY yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1HPrintMotd noP[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PrintLastLog yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#TCPKeepAlive yes#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PermitUserEnvironment no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#Compression delayed#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#ClientAliveInterval 0#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#ClientAliveCountMax 3#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#UseDNS no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PidFile /run/sshd.pid#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#MaxStartups 10:30:100#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#PermitTunnel no#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#ChrootDirectory none#[39m(B[m[?25l[?12l[?25h7[2;48r8[48d
+[1;50r[47;1H[36m#VersionAddendum none#[39m(B[m[50;1H[?1049l[23;0;0t[?1l>^[OB[?1049h[22;0;0t[1;98r[?12l[?25h[39;49m]104(B[m[4l[?7h[H[2J[?2004h[?1h=[?1h=(B[0;7m  GNU nano 8.7.1                                                                                                                                                               /etc/ssh/sshd_config                                                                                                                                                                        [1;362H(B[m[2d[36m# Beware issues with some PAM modules and threads.[3d[39m(B[mKbdInteractiveAuthentication no[5d[36m# Kerberos options[6d#KerberosAuthentication no[7d#KerberosOrLocalPasswd yes[8d#KerberosTicketCleanup yes[9d#KerberosGetAFSToken no[11d# GSSAPI options[12d#GSSAPIAuthentication no[13d#GSSAPICleanupCredentials yes[14d#GSSAPIStrictAcceptorCheck yes[15d#GSSAPIKeyExchange no[17d# Set this to 'yes' to enable PAM authentication, account processing,[18d# and session processing. If this is enabled, PAM authentication will[19d# be allowed through the KbdInteractiveAuthentication and[20d# PasswordAuthentication.  Depending on your PAM configuration,[21d# PAM authentication via KbdInteractiveAuthentication may bypass[22d# the setting of "PermitRootLogin prohibit-password".[23d# If you just want the PAM account and session checks to run without[24d# PAM authentication, then enable this but set PasswordAuthentication[25d# and KbdInteractiveAuthentication to 'no'.[26d[39m(B[mUsePAM yes[28d[36m#AllowAgentForwarding yes[29d#AllowTcpForwarding yes[30d#GatewayPorts no[31d[39m(B[mX11Forwarding yes[32d[36m#X11DisplayOffset 10[33d#X11UseLocalhost yes[34d#PermitTTY yes[35d[39m(B[mPrintMotd no[36d[36m#PrintLastLog yes[37d#TCPKeepAlive yes[38d#PermitUserEnvironment no[39d#Compression delayed[40d#ClientAliveInterval 0[41d#ClientAliveCountMax 3[42d#UseDNS no[43d#PidFile /run/sshd.pid[44d#MaxStartups 10:30:100[45d#PermitTunnel no[46d#ChrootDirectory none[47d#VersionAddendum none[49d# no default banner path[50d#Banner none[52d# Allow client to pass locale and color environment variables[53d[39m(B[mAcceptEnv LANG LC_* COLORTERM NO_COLOR[55d[36m# override default of no subsystems[56d[39m(B[mSubsystem[38;5;208m       [39m(B[msftp[38;5;208m    [39m(B[m/usr/lib/openssh/sftp-server[58d[36m# Example of overriding settings on a per-user basis[59d#Match User anoncvs[60d#[38;5;208m       [36mX11Forwarding no[61d#[38;5;208m       [36mAllowTcpForwarding no[62d#[38;5;208m       [36mPermitTTY no[63d#[38;5;208m       [36mForceCommand cvs server[97d[39m(B[0;7m^G(B[m Help[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute[97;91H(B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[145G(B[0;7mM-](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[217G(B[0;7m^A(B[m Home[97;235H(B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98d(B[0;7m^X(B[m Exit[98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify[98;91H(B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;145H(B[0;7m^B(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[217G(B[0;7m^E(B[m End[98;235H(B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[?25l[?12l[?25h[47;2H[?25l[?12l[?25h[?25l[?12l[?25h[48d[?25l[?12l[?25h[49;2H[?25l[?12l[?25h[50d[?25l[?12l[?25h[51d[?25l[?12l[?25h[52;2H[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55;2H[?25l[?12l[?25h[56d[?25l[?12l[?25h[57d[?25l[?12l[?25h[58;2H[?25l[?12l[?25h[59d[?25l[?12l[?25h[60d[?25l[?12l[?25h[61d[?25l[?12l[?25h[62d[?25l[?12l[?25h[63d[?25l[?12l[?25h[64d[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AS[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AA[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AU[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AK[?25l[?12l[?25h[A[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# one-time passwords or some combination of these and other methods.#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# the system's configuration, this may involve passwords, challenge-response,#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# Change to "yes" to enable keyboard-interactive authentication.  Depending on#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#PermitEmptyPasswords no#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#PasswordAuthentication yes#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# To disable tunneled clear text passwords, change to "no" here!#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#IgnoreRhosts yes#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# Don't read the user's ~/.rhosts and ~/.shosts files#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#IgnoreUserKnownHosts no#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# HostbasedAuthentication#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# Change to yes if you don't trust ~/.ssh/known_hosts for#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#HostbasedAuthentication no#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#AuthorizedKeysCommandUser nobody#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#AuthorizedKeysCommand none#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#AuthorizedPrincipalsFile none#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#AuthorizedKeysFile[38;5;208m     [36m.ssh/authorized_keys .ssh/authorized_keys2#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m# Expect .ssh/authorized_keys2 to be disregarded by default in future.#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#PubkeyAuthentication yes#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#MaxSessions 10#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#MaxAuthTries 6#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#StrictModes yes#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#PermitRootLogin prohibit-password#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#LoginGraceTime 2m#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Authentication:#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#LogLevel INFO#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#SyslogFacility AUTH#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Logging#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#RekeyLimit default none#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Ciphers and keying#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#HostKey /etc/ssh/ssh_host_ed25519_key#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#HostKey /etc/ssh/ssh_host_ecdsa_key#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#HostKey /etc/ssh/ssh_host_rsa_key#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#ListenAddress ::#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#ListenAddress 0.0.0.0#[39m(B[m[?25l[?12l[?25h7[2;96r8M[1;98r[2;1H[36m#AddressFamily any#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#Port 22#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#   systemctl restart ssh.socket#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#   systemctl daemon-reload#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# For changes to take effect, run:#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# ListenAddress.#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# configuration must be re-generated after changing Port, AddressFamily, or#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# When systemd socket activation is used (the default), the socket#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[?25l[?12l[?25h7[2;95r8M[1;98r[2;1HInclude /etc/ssh/sshd_config.d/*.confI[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Ubuntu.#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Such configuration snippets may be present in default installations of#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# precedence.#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# order, so options defined in files with names that sort earlier take#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# file. In addition, configuration snippet files are processed in lexical#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# /etc/ssh/sshd_config.d/*.conf take precedence over those defined in this#[39m(B[m[?25l[?12l[?25h7[2;95r8M[1;98r[2;1H[36m# Note that the above implies that configuration options from snippets in#[39m(B[m[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12;2H[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[?12l[?25h[18d[?25l[?12l[?25h[19d[?25l[?12l[?25h[20d[?25l[?12l[?25h[21d[?25l[?12l[?25h[22d[?25l[?12l[?25h[23d[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h[26;2H[?25l[?12l[?25h[27d[?25l[?12l[?25h[28d[?25l[?12l[?25h[29d[?25l[?12l[?25h[30;2H[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h[33;2H[?25l[?12l[?25h[34d[?25l[?12l[?25h[35d[?25l[?12l[?25h[36d[?25l[?12l[?25h[37;2H[?25l[?12l[?25h[38d[?25l[?12l[?25h[39;2H[?25l[?12l[?25h[40d[?25l[?12l[?25h[41d[?25l[?12l[?25h[42d[?25l[?12l[?25h[43d[?25l[?12l[?25h[44d[?25l[?12l[?25h[45;2H[?25l[?12l[?25h[46d[?25l[?12l[?25h[47;2H[?25l[?12l[?25h[48d[?25l[?12l[?25h[49d[?25l[?12l[?25h[50;2H[?25l[?12l[?25h[51d[?25l[?12l[?25h[52;2H[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55;2H[?25l[?12l[?25h[56d[?25l[?12l[?25h[57d[?25l[?12l[?25h[58d[?25l[?12l[?25h[59d[?25l[?12l[?25h[60d[?25l[?12l[?25h[61d[?25l[?12l[?25h[62d[?25l[?12l[?25h[63;2H[?25l[?12l[?25h[64d[?25l[?12l[?25h[65d[?25l[?12l[?25h[66d[?25l[?12l[?25h[67;2H[?25l[?12l[?25h[68d[?25l[?12l[?25h[69d[?25l[?12l[?25h[70d[?25l[?12l[?25h[71d[?25l[?12l[?25h[72d[?25l[?12l[?25h[73;2H[?25l[?12l[?25h[74d[?25l[?12l[?25h[75d[?25l[?12l[?25h[76d[?25l[?12l[?25h[77d[?25l[?12l[?25h[78d[?25l[?12l[?25h[79;2H[?25l[?12l[?25h[80d[?25l[?12l[?25h[81d[?25l[?12l[?25h[82d[?25l[?12l[?25h[83d[?25l[?12l[?25h[84d[?25l[?12l[?25h[85;2H[?25l[?12l[?25h[86d[?25l[?12l[?25h[87d[?25l[?12l[?25h[88d[?25l[?12l[?25h[89d[?25l[?12l[?25h[90d[?25l[?12l[?25h[91d[?25l[?12l[?25h[92d[?25l[?12l[?25h[93d[?25l[?12l[?25h[94d[?25l[?12l[?25h[95d[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#AllowAgentForwarding yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#AllowTcpForwarding yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#GatewayPorts no#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1HX11Forwarding yesX[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#X11DisplayOffset 10#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#X11UseLocalhost yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#PermitTTY yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1HPrintMotd noP[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#PrintLastLog yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#TCPKeepAlive yes#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#PermitUserEnvironment no#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#Compression delayed#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#ClientAliveInterval 0#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#ClientAliveCountMax 3#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#UseDNS no#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#PidFile /run/sshd.pid#[39m(B[m[?25l[?12l[?25h7[2;96r8[96d
+[1;98r[95;1H[36m#MaxStartups 10:30:100#[39m(B[m[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AU[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AK[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[51d[?25l[?12l[?25h[52d[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55d[?25l[?12l[?25h[56;2H[?25l[?12l[?25h[57d[?25l[?12l[?25h[58d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AK[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[46;2H[?25l[?12l[?25h[47d[?25l[?12l[?25h[48d[?25l[?12l[?25h[49d[?25l[?12l[?25h[50;2H[?25l[?12l[?25h[51d[?25l[?12l[?25h[52d[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55d[?25l[?12l[?25h[56;2H[?25l[?12l[?25h[57d[?25l[?12l[?25h[58d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[AK[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[C[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[1;197H(B[0;7m*[362G(B[m[?12l[?25h[23dPermitRootLogin prohibit-password[K[?25l[?12l[?25hP[?25l[?12l[?25he[?25l[?12l[?25hr[?25l[?12l[?25hm[?25l[?12l[?25hi[?25l[?12l[?25ht[?25l[?12l[?25hR[?25l[?12l[?25ho[?25l[?12l[?25ho[?25l[?12l[?25ht[?25l[?12l[?25hL[?25l[?12l[?25ho[?25l[?12l[?25hg[?25l[?12l[?25hi[?25l[?12l[?25hn[?25l[?12l[?25h [?25l[?12l[?25hp[?25l[?12l[?25hr[?25l[?12l[?25ho[?25l[?12l[?25hh[?25l[?12l[?25hi[?25l[?12l[?25hb[?25l[?12l[?25hi[?25l[?12l[?25ht[?25l[?12l[?25h-[?25l[?12l[?25hp[?25l[?12l[?25ha[?25l[?12l[?25hs[?25l[?12l[?25hs[?25l[?12l[?25hw[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25hd[?25l[?12l[?25h[24d[?25l[?12l[?25h[23;34H[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25hn[?25l[?12l[?25ho[?25l[?12l[?25h[24d[?25l[?12l[?25h[25d[?25l[?12l[?25h [?25l[?12l[?25h[36m3[39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hMaxAuthTries 3[K[?25l[?12l[?25h[26d[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[C[?25l[?12l[?25h[27d[?25l[?12l[?25h[28;16H[?25l[?12l[?25h[29d[?25l[?12l[?25h[30;16H[?25l[?12l[?25h[31d[?25l[?12l[?25h[32d[?25l[?12l[?25h[33;16H[?25l[?12l[?25h[34d[?25l[?12l[?25h[35;16H[?25l[?12l[?25h[36d[?25l[?12l[?25h[37d[?25l[?12l[?25h[38;16H[?25l[?12l[?25h[39d[?25l[?12l[?25h[40d[?25l[?12l[?25h[41d[?25l[?12l[?25h[42d[?25l[?12l[?25h[43d[?25l[?12l[?25h[44d[?25l[?12l[?25h[45d[?25l[?12l[?25h[46;16H[?25l[?12l[?25h[47d[?25l[?12l[?25h[48d[?25l[?12l[?25h[49d[?25l[?12l[?25h[50;16H[?25l[?12l[?25h[51d[?25l[?12l[?25h[52d[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55d[?25l[?12l[?25h[56;16H[?25l[?12l[?25h[57d[?25l[?12l[?25h[58d[?25l[?12l[?25h[59d[?25l[?12l[?25h[60d[?25l[?12l[?25h[61d[?25l[?12l[?25h[62;16H[?25l[?12l[?25h[63d[?25l[?12l[?25h[64d[?25l[?12l[?25h[65d[?25l[?12l[?25h[66d[?25l[?12l[?25h[67d[?25l[?12l[?25h[68;16H[?25l[?12l[?25h[69d[?25l[?12l[?25h[70d[?25l[?12l[?25h[71d[?25l[?12l[?25h[72d[?25l[?12l[?25h[73d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[66;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[60;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[54;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[48;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[44;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[36;16H[?25l[?12l[?25h[37d[?25l[?12l[?25h[38;16H[?25l[?12l[?25h[39d[?25l[?12l[?25h[40d[?25l[?12l[?25h[41d[?25l[?12l[?25h[42d[?25l[?12l[?25h[43d[?25l[?12l[?25h[44d[?25l[?12l[?25h[45d[?25l[?12l[?25h[46;16H[?25l[?12l[?25h[47d[?25l[?12l[?25h[48d[?25l[?12l[?25h[49d[?25l[?12l[?25h[50;16H[?25l[?12l[?25h[51d[?25l[?12l[?25h[52d[?25l[?12l[?25h[53d[?25l[?12l[?25h[54d[?25l[?12l[?25h[55d[?25l[?12l[?25h[56;16H[?25l[?12l[?25h[57d[?25l[?12l[?25h[58d[?25l[?12l[?25h[59d[?25l[?12l[?25h[60d[?25l[?12l[?25h[61d[?25l[?12l[?25h[62;16H[?25l[?12l[?25h[63d[?25l[?12l[?25h[64d[?25l[?12l[?25h[65d[?25l[?12l[?25h[66d[?25l[?12l[?25h[67d[?25l[?12l[?25h[68;16H[?25l[?12l[?25h[69d[?25l[?12l[?25h[70d[?25l[?12l[?25h[71d[?25l[?12l[?25h[72d[?25l[?12l[?25h[73d[?25l[?12l[?25h[74d[?25l[?12l[?25h[75d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[66;16H[?25l[?12l[?25h[67d[?25l[?12l[?25h[68;16H[?25l[?12l[?25h[69d[?25l[?12l[?25h[70d[?25l[?12l[?25h[71d[?25l[?12l[?25h[72d[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[66;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[60;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[54;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[48;16H[?25l[?12l[?25h[A[?25l[?12l[?25h[48d[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[C[?25l[?12l[?25hPermitEmptyPasswords no[K[?25l[?12l[?25hP[?25l[?12l[?25he[?25l[?12l[?25hr[?25l[?12l[?25hm[?25l[?12l[?25hi[?25l[?12l[?25ht[?25l[?12l[?25hE[?25l[?12l[?25hm[?25l[?12l[?25hp[?25l[?12l[?25ht[?25l[?12l[?25hy[?25l[?12l[?25hP[?25l[?12l[?25ha[?25l[?12l[?25hs[?25l[?12l[?25hs[?25l[?12l[?25hw[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25hd[?25l[?12l[?25hs[?25l[?12l[?25h [?25l[?12l[?25hn[?25l[?12l[?25ho[?25l[?12l[?25h[49d[?25l[?12l[?25h[50d[?25l[?12l[?25h[C[?25l[97;19H            [37G           [55G      [97;73H(B[0;7mM-D(B[m DOS Format[15X[97;109H        [97;127H            [97;147H(B[0;7mA(B[m Append[20X[97;181H      [97;199H            [217G(B[0;7mM-B(B[m Backup File[15X[97;253H[36X[97;289H(B[0;7m^T(B[m Browse[K[98;2H(B[0;7mC(B[m Cancel[98;19H            [37G          [98;55H        [98;73H(B[0;7mM-M(B[m Mac Format[30X[98;127H        [98;145H(B[0;7mM-P(B[m Prepend [163G        [98;181H         [98;199H            [218G(B[0;7mQ(B[m Discard buffer[K[97;298H[A(B[0;7mWrite to File: /etc/ssh/sshd_config                                                                                                                                                                                                                                                                                                                                        [96;36H(B[m[?12l[?25h[?25l[96;174H[1K (B[0;7m[ Writing... ](B[m[K[1;197H(B[0;7m [362G(B[m[96;173H(B[0;7m[ Wrote 145 lines ](B[m[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute        (B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[97;147H(B[0;7m](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[217G(B[0;7m^A(B[m Home           (B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98;2H(B[0;7mX(B[m Exit  [98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify        (B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;145H(B[0;7m^B(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[218G(B[0;7mE(B[m End            (B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[?12l[?25h[50;2H[?25l[97;19H            [37G           [55G      [97;73H(B[0;7mM-C(B[m Case Sens[16X[97;109H        [97;127H            [97;147H(B[0;7mB(B[m Backwards[17X[97;181H      [97;199H            [218G(B[0;7mP(B[m Older[97;235H            [253G[36X[97;289H(B[0;7m^T(B[m Go To Line[K[98;2H(B[0;7mC(B[m Cancel[98;19H            [37G          [98;55H        [98;73H(B[0;7mM-R(B[m Reg.exp.[91G[26X[98;127H        [98;146H(B[0;7mR(B[m Replace  [163G        [98;181H         [98;199H            [218G(B[0;7mN(B[m Newer[K[97;302H[A(B[0;7mSearch:                                                                                                                                                                                                                                                                                                                                                                    [96;9H(B[m[?12l[?25h[?25l[?12l[?25h[?25l[96;175H[1K (B[0;7m[ Cancelled ](B[m[K[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute        (B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[97;147H(B[0;7m](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[218G(B[0;7mA(B[m Home [97;235H(B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98;2H(B[0;7mX(B[m Exit  [98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify  [91G(B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;146H(B[0;7mB(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[218G(B[0;7mE(B[m End  [98;235H(B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[?12l[?25h[50;2H[?25l[96d[J[98d[?12l[?25h[98;1H[?1049l[23;0;0t[?1l>[?2004l]3008;end=4f3d4554-55e4-4911-b327-3f8fc024d18a;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo ssjh[K[Khd -t
+[?2004l]3008;start=e1eca174-27be-4947-98eb-1d7f504873d4;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=e1eca174-27be-4947-98eb-1d7f504873d4;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo systemctl restart ssh
+[?2004l]3008;start=543171d3-0530-4712-86aa-e76d1989c420;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=543171d3-0530-4712-86aa-e76d1989c420;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ systemctl status ssh
+[?2004l]3008;start=5a3b3d80-2b4d-4225-b292-3dc390025e64;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?1h=[0;1;32m●[0m ssh.service - OpenBSD Secure Shell server[m
+     Loaded: loaded (]8;;file://DESKTOP-7BR8OG8/usr/lib/systemd/system/ssh.service\/usr/lib/systemd/system/ssh.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;32menabled[0m)[m]8;;\
+     Active: [0;1;32mactive (running)[0m since Mon 2026-11-23 03:06:33 EST; 3s ago[m
+ Invocation: d010b9c4c3b14ac1b385d128a55a79ae[m
+TriggeredBy: [0;1;32m●[0m ssh.socket[m
+       Docs: ]8;;man:sshd(8)\man:sshd(8)]8;;\[m]8;;\
+             ]8;;man:sshd_config(5)\man:sshd_config(5)]8;;\[m]8;;\
+    Process: 1949 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)[m
+   Main PID: 1952 (sshd)[m
+      Tasks: 1[0;38:5:245m (limit: 19133)[0m[m
+     Memory: 1.7M (peak: 2.5M)[m
+        CPU: 17ms[m
+     CGroup: /system.slice/ssh.service[m
+             └─[0;38:5:245m1952 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"[0m[m
+[m
+Nov 23 03:06:33 DESKTOP-7BR8OG8 systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...[m
+Nov 23 03:06:33 DESKTOP-7BR8OG8 sshd[1952]: Server listening on 0.0.0.0 port 22.[m
+Nov 23 03:06:33 DESKTOP-7BR8OG8 sshd[1952]: Server listening on :: port 22.[m
+Nov 23 03:06:33 DESKTOP-7BR8OG8 systemd[1]: Started ssh.service - OpenBSD Secure Shell server.[m
+[K[?1l>]3008;end=5a3b3d80-2b4d-4225-b292-3dc390025e64;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ cp /etc/ssh/sshd_config ~/sshd_config.hardened
+[?2004l]3008;start=92344147-6576-4f11-ae6d-4bf6e8ed96a5;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=92344147-6576-4f11-ae6d-4bf6e8ed96a5;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo nano /etc/pam.d/common-auth
+[?2004l]3008;start=b2c502dc-106c-4d36-9260-1a0e72469c0d;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?2004h[?1049h[22;0;0t[1;98r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[96;175H(B[0;7m[ Reading... ](B[m[96;174H(B[0;7m[ Read 26 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                                                                                                                                              /etc/pam.d/common-auth                                                                                                                                                                       [1;362H(B[m[97d(B[0;7m^G(B[m Help[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute[97;91H(B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[145G(B[0;7mM-](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[217G(B[0;7m^A(B[m Home[97;235H(B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98d(B[0;7m^X(B[m Exit[98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify[98;91H(B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;145H(B[0;7m^B(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[217G(B[0;7m^E(B[m End[98;235H(B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[2d[36m#[3d# /etc/pam.d/common-auth - authentication settings common to all services[4d#[5d# This file is included from other service-specific PAM config files,[6d# and should contain a list of the authentication modules that define[7d# the central authentication scheme for use on the system[8d# (e.g., /etc/shadow, LDAP, Kerberos, etc.).  The default is to use the[9d# traditional Unix authentication mechanisms.[10d#[11d# As of pam 1.0.1-6, this file is managed by pam-auth-update by default.[12d# To take advantage of this, it is recommended that you configure any[13d# local modules either before or after the default block, and use[14d# pam-auth-update to manage selection of other modules.  See[15d# pam-auth-update(8) for details.[17d# here are the per-package modules (the "Primary" block)[18d[39m(B[mauth[38;5;208m    [39m(B[m[success=1 default=ignore][38;5;208m      [39m(B[mpam_unix.so nullok[19d[36m# here's the fallback if no module succeeds[20d[39m(B[mauth[38;5;208m    [39m(B[mrequisite[38;5;208m[23X[20;41H[39m(B[mpam_deny.so[21d[36m# prime the stack with a positive return value if there isn't one already;[22d# this avoids us returning an error just because nothing sets a success code[23d# since the modules above will each just jump around[24d[39m(B[mauth[38;5;208m    [39m(B[mrequired[38;5;208m[24X[24;41H[39m(B[mpam_permit.so[25d[36m# and here are more per-package modules (the "Additional" block)[26d[39m(B[mauth[38;5;208m    [39m(B[moptional[38;5;208m[24X[26;41H[39m(B[mpam_cap.so[27d[36m# end of pam-auth-update config[2d[39m(B[m[?12l[?25h[?25l[96d[J[98d[?12l[?25h[98;1H[?1049l[23;0;0t[?1l>[?2004l]3008;end=b2c502dc-106c-4d36-9260-1a0e72469c0d;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth.bak[1P
+[?2004l]3008;start=2d48d512-aca1-439f-bccb-532c6e7f1842;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\cp: cannot create regular file '/etc/pamd/common-auth.bak': No such file or directory
+]3008;end=2d48d512-aca1-439f-bccb-532c6e7f1842;exit=failure;status=1\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo cp /etc/pam.d/common-auth /etc/pamd/common-auth.bak[1@.
+[?2004l]3008;start=37eeb383-9823-4d29-9d71-2ed9f67b749c;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=37eeb383-9823-4d29-9d71-2ed9f67b749c;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo cp /etc/pam.d/common-auth /etc/pam.d/common-auth.bak[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@.[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@.[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pnano /etc/pam.d/common-auth
+[?2004l]3008;start=50e22959-7f0b-4b90-aa1e-c0d466a3768a;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[?2004h[?1049h[22;0;0t[1;98r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[96;175H(B[0;7m[ Reading... ](B[m[96;174H(B[0;7m[ Read 26 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                                                                                                                                              /etc/pam.d/common-auth                                                                                                                                                                       [1;362H(B[m[97d(B[0;7m^G(B[m Help[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute[97;91H(B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[145G(B[0;7mM-](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[217G(B[0;7m^A(B[m Home[97;235H(B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98d(B[0;7m^X(B[m Exit[98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify[98;91H(B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;145H(B[0;7m^B(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[217G(B[0;7m^E(B[m End[98;235H(B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[2d[36m#[3d# /etc/pam.d/common-auth - authentication settings common to all services[4d#[5d# This file is included from other service-specific PAM config files,[6d# and should contain a list of the authentication modules that define[7d# the central authentication scheme for use on the system[8d# (e.g., /etc/shadow, LDAP, Kerberos, etc.).  The default is to use the[9d# traditional Unix authentication mechanisms.[10d#[11d# As of pam 1.0.1-6, this file is managed by pam-auth-update by default.[12d# To take advantage of this, it is recommended that you configure any[13d# local modules either before or after the default block, and use[14d# pam-auth-update to manage selection of other modules.  See[15d# pam-auth-update(8) for details.[17d# here are the per-package modules (the "Primary" block)[18d[39m(B[mauth[38;5;208m    [39m(B[m[success=1 default=ignore][38;5;208m      [39m(B[mpam_unix.so nullok[19d[36m# here's the fallback if no module succeeds[20d[39m(B[mauth[38;5;208m    [39m(B[mrequisite[38;5;208m[23X[20;41H[39m(B[mpam_deny.so[21d[36m# prime the stack with a positive return value if there isn't one already;[22d# this avoids us returning an error just because nothing sets a success code[23d# since the modules above will each just jump around[24d[39m(B[mauth[38;5;208m    [39m(B[mrequired[38;5;208m[24X[24;41H[39m(B[mpam_permit.so[25d[36m# and here are more per-package modules (the "Additional" block)[26d[39m(B[mauth[38;5;208m    [39m(B[moptional[38;5;208m[24X[26;41H[39m(B[mpam_cap.so[27d[36m# end of pam-auth-update config[2d[39m(B[m[?12l[?25h[?25l[?12l[?25h[3d[?25l[?12l[?25h[4d[?25l[?12l[?25h[5d[?25l[?12l[?25h[6d[?25l[?12l[?25h[7d[?25l[?12l[?25h[8d[?25l[?12l[?25h[9d[?25l[?12l[?25h[10d[?25l[?12l[?25h[11d[?25l[?12l[?25h[12d[?25l[?12l[?25h[13d[?25l[?12l[?25h[14d[?25l[?12l[?25h[15d[?25l[?12l[?25h[16d[?25l[?12l[?25h[17d[?25l[1;198H(B[0;7m*[362G(B[m[16;95r[16;1HM[1;98r[18;1H[?12l[?25h[?25l[16;95r[95;1H
+[1;98r[17;1H[?12l[?25h[?25l[?12l[?25h[18d[?25l[18;95r[95;1H
+[1;98r[17;57H[36mauth[38;5;208m    [36m[success=1 default=ignore][38;5;208m      [36mpam_unix.so nullok[17;57H[39m(B[m[?12l[?25h[?25l[96;170H(B[0;1m[37m[41m[ To suspend, type ^T^Z ][39;49m(B[m[?12l[?25h[17;57H[?25l7[18;95r8[18dM[1;98r[17;57H[K[18dauth[38;5;208m    [39m(B[m[success=1 default=ignore][38;5;208m      [39m(B[mpam_unix.so nullok[?12l[?25h[?25l7[18;95r8M[1;98r[19;1H[?12l[?25h[?25l[?12l[?25h[A[?25l[29d[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l7[18;96r8[3T[1;98r[18;1Hauth required pam_faillock.so preauth silent deny=5 unlock_time=300[21d[?12l[?25h-[?25l[?12l[?25h[K[?25l[19;96r[96;1H
+[1;98r[20;1H[?12l[?25h[?25l[19;96r[96;1H
+[1;98r[19;1H[?12l[?25h[?25l[19;96r[96;1H
+[1;98r[18;68H[?12l[?25h[?25l7[19;96r8[19dM[1;98r[19;1H[?12l[?25h[?25l[?12l[?25hauth [success=1 default=ignore] pam_unix.so nullok[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[K[?25l[19;96r[96;1H
+[1;98r[18;68H[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h0[?25l[?12l[?25h[19;59H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hx[?25l[?12l[?25h.[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25h [?25l[?12l[?25hn[?25l[?12l[?25hu[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[35G[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[[?25l[?12l[?25hs[?25l[?12l[?25hu[?25l[?12l[?25hc[?25l[?12l[?25hc[?25l[?12l[?25he[?25l[?12l[?25hs[?25l[?12l[?25hs[?25l[?12l[?25h=[?25l[?12l[?25h1[?25l[?12l[?25h [?25l[?12l[?25hd[?25l[?12l[?25he[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25hl[?25l[?12l[?25ht[?25l[?12l[?25h=[?25l[?12l[?25hi[?25l[?12l[?25hg[?25l[?12l[?25hn[?25l[?12l[?25ho[?25l[?12l[?25hr[?25l[?12l[?25he[?25l[?12l[?25h][38;5;208m [39m(B[m[?25l[?12l[?25h][38;5;208m [39m(B[m[?25l[?12l[?25h][8P[?25l[?12l[?25h][38;5;208m [39m(B[m[?25l[?12l[?25h][38;5;208m [39m(B[m[?25l[?12l[?25h][38;5;208m [39m(B[m[?25l[?12l[?25hb][?25l[?12l[?25ha][?25l[?12l[?25hd][?25l[?12l[?25h][?25l[?12l[?25h[C[?25l[?12l[?25hp[?25l[?12l[?25ha[?25l[?12l[?25hm[?25l[?12l[?25h_[?25l[?12l[?25hu[?25l[?12l[?25hn[?25l[?12l[?25hi[?25l[?12l[?25hx[?25l[?12l[?25h.[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25h [?25l[?12l[?25hn[?25l[?12l[?25hu[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hk[?25l7[20;96r8[20dM[1;98r[20;1H[?12l[?25h[?25l[?12l[?25hauth [default=die] pam_faillock.so authfail[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h [?25l[?12l[?25h[41m [49m[38;5;208m     [39m(B[mpam_faillock.so authfail[20;25H[?25l[?12l[?25h[20G[38;5;208m             [39m(B[mpam_faillock.so authfail[20;33H[?25l[?12l[?25h[20;25H[?25l[?12l[?25h[20G[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[41m [49m[38;5;208m   [39m(B[m[default=die][41m [20;9H[49m(B[m[?25l[?12l[?25h[[?25l[?12l[?25hd[?25l[?12l[?25he[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25hl[?25l[?12l[?25ht[?25l[?12l[?25h=[?25l[?12l[?25hd[?25l[?12l[?25hi[?25l[?12l[?25he[?25l[?12l[?25h][?25l[?12l[?25h[C[?25l[?12l[?25h[25G[?25l[?12l[?25h[20;33H[?25l[?12l[?25hp[?25l[?12l[?25ha[?25l[?12l[?25hm[?25l[?12l[?25h_[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hi[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hc[?25l[?12l[?25hk[?25l[?12l[?25h.[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25h [?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25ht[?25l[?12l[?25hh[?25l[?12l[?25hf[?25l[?12l[?25h[21;44H[?25l[?12l[?25h[20;54H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[20;25H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25ht[?25l[?12l[?25h=[?25l[?12l[?25hd[?25l[?12l[?25hi[?25l[?12l[?25he[?25l[?12l[?25h][?25l[?12l[?25h[C[?25l[?12l[?25h[38;5;208m [39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[C[?25l[?12l[?25h[38;5;208m [39m(B[m[?25l[?12l[?25h[9G[?25l[?12l[?25h[[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[9G[?25l[?12l[?25h[[?25l[?12l[?25hd[?25l[?12l[?25he[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25hl[?25l[?12l[?25ht[?25l[?12l[?25h=[?25l[?12l[?25hd[?25l[?12l[?25hi[?25l[?12l[?25he[?25l[?12l[?25h][?25l[?12l[?25h[25G[?25l[?12l[?25h[20;33H[?25l[?12l[?25hp[?25l[?12l[?25ha[?25l[?12l[?25hm[?25l[?12l[?25h_[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hi[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hc[?25l[?12l[?25hk[?25l[?12l[?25h.[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25h [?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25ht[?25l[?12l[?25hh[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hi[?25l[?12l[?25hl[?25l[?12l[?25h[21d[?25l[?12l[?25h[20;57H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[20;25H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hu[?25l[?12l[?25hl[?25l[?12l[?25ht[?25l[?12l[?25h=[?25l[?12l[?25hd[?25l[?12l[?25hi[?25l[?12l[?25he[?25l[?12l[?25h][?25l[?12l[?25h[25G[?25l[?12l[?25h[?25l[?12l[?25h[25G[?25l[?12l[?25h[20;33H[?25l[?12l[?25h[20;25H[?25l[?12l[?25h[?25l[?12l[?25h[25G[?25l[?12l[?25h[20;33H[?25l[?12l[?25h[20;25H[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25he[?25l[?12l[?25h][?25l[?12l[?25h[25G[?25l[?12l[?25h[8P[?25l[?12l[?25h[38;5;208m           [39m(B[mpam_faillock.so authfail[20;25H[?25l[?12l[?25h[20;33H[?25l[?12l[?25hp[?25l[?12l[?25ha[?25l[?12l[?25hm[?25l[?12l[?25h_[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hi[?25l[?12l[?25hl[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hc[?25l[?12l[?25hk[?25l[?12l[?25h.[?25l[?12l[?25hs[?25l[?12l[?25ho[?25l[?12l[?25h [?25l[?12l[?25ha[?25l[?12l[?25hu[?25l[?12l[?25ht[?25l[?12l[?25hh[?25l[?12l[?25hf[?25l[?12l[?25ha[?25l[?12l[?25hi[?25l[?12l[?25hl[?25l7[21;96r8[21dM[1;98r[21;1H[?12l[?25h[?25l[31d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[A[?25l[?12l[?25h[21d[?25l[?12l[?25hauth sufficient pam_faillock.so authsucc[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[41m [49m[38;5;208m   [39m(B[msufficient pam_faillock.so authsucc[21;9H[?25l[?12l[?25hs[?25l[?12l[?25hu[?25l[?12l[?25hf[?25l[?12l[?25hf[?25l[?12l[?25hi[?25l[?12l[?25hc[?25l[?12l[?25hi[?25l[?12l[?25he[?25l[?12l[?25hn[?25l[?12l[?25ht[?25l[?12l[?25h [?25l[?12l[?25h[41m [49m[38;5;208m     [39m(B[mpam_faillock.so authsucc[21;25H[?25l[?12l[?25h[20G[38;5;208m             [39m(B[mpam_faillock.so authsucc[21;33H[?25l[?12l[?25h[21;25H[?25l[?12l[?25h[20G[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25hn[?25l[?12l[?25ht[?25l[?12l[?25h[C[?25l[?12l[?25h[25G[?25l[?12l[?25h[20G[?25l[?12l[?25h[38;5;208m [39m(B[m[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[C[?25l[?12l[?25h[38;5;208m [39m(B[m[?25l[97;19H            [37G           [55G      [97;73H(B[0;7mM-D(B[m DOS Format[15X[97;109H        [97;127H            [97;147H(B[0;7mA(B[m Append[20X[97;181H      [97;199H            [217G(B[0;7mM-B(B[m Backup File[15X[97;253H[36X[97;289H(B[0;7m^T(B[m Browse[K[98;2H(B[0;7mC(B[m Cancel[98;19H            [37G          [98;55H        [98;73H(B[0;7mM-M(B[m Mac Format[30X[98;127H        [98;145H(B[0;7mM-P(B[m Prepend [163G        [98;181H         [98;199H            [218G(B[0;7mQ(B[m Discard buffer[K[97;298H[A(B[0;7mWrite to File: /etc/pam.d/common-auth                                                                                                                                                                                                                                                                                                                                      [96;38H(B[m[?12l[?25h[?25l[96;174H[1K (B[0;7m[ Writing... ](B[m[K[1;198H(B[0;7m [362G(B[m[96;173H(B[0;7m[ Wrote 29 lines ](B[m[97;19H(B[0;7m^O(B[m Write Out[37G(B[0;7m^F(B[m Where Is[55G(B[0;7m^K(B[m Cut[97;73H(B[0;7m^T(B[m Execute        (B[0;7m^C(B[m Location[109G(B[0;7mM-U(B[m Undo[97;127H(B[0;7mM-A(B[m Set Mark[97;147H(B[0;7m](B[m To Bracket    (B[0;7mM-B(B[m Previous[181G(B[0;7m◂(B[m Back[97;199H(B[0;7m^◂(B[m Prev Word[217G(B[0;7m^A(B[m Home           (B[0;7m^P(B[m Prev Line[253G(B[0;7mM-▴(B[m Scroll Up     (B[0;7m^▴(B[m Prev Block     (B[0;7mM-((B[m Begin of Parag(B[0;7mM-Home(B[m Top Row    (B[0;7m^Y(B[m Prev Page[343G(B[0;7mM-\(B[m First Line[98;2H(B[0;7mX(B[m Exit  [98;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[98;55H(B[0;7m^U(B[m Paste[98;73H(B[0;7m^J(B[m Justify        (B[0;7m^/(B[m Go To Line     (B[0;7mM-E(B[m Redo[98;127H(B[0;7mM-6(B[m Copy[98;145H(B[0;7m^B(B[m Where Was[163G(B[0;7mM-F(B[m Next[98;181H(B[0;7m▸(B[m Forward[98;199H(B[0;7m^▸(B[m Next Word[218G(B[0;7mE(B[m End            (B[0;7m^N(B[m Next Line[253G(B[0;7mM-▾(B[m Scroll Down   (B[0;7m^▾(B[m Next Block     (B[0;7mM-)(B[m End of Paragra(B[0;7mM-End(B[m Bottom Row  (B[0;7m^V(B[m Next Page[343G(B[0;7mM-/(B[m Last Line[?12l[?25h[21;5H[?25l[96d[J[98d[?12l[?25h[98;1H[?1049l[23;0;0t[?1l>[?2004l]3008;end=50e22959-7f0b-4b90-aa1e-c0d466a3768a;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ cp /etc/pam.d/common-auth ~/pam-common-auth.hardened
+[?2004l]3008;start=7f643b60-fd76-4b26-9af9-013cee553b3b;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\]3008;end=7f643b60-fd76-4b26-9af9-013cee553b3b;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ sudo lynis audit system 2>&1 | tee ~/lynis-report.txt
+[?2004l]3008;start=c689c97c-1508-4fd4-9892-976aa72533b0;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\[sudo: authenticate] Password: **********          
+
+[1;37m[ Lynis 3.1.6 ][0m
+
+################################################################################
+  Lynis comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+  welcome to redistribute it under the terms of the GNU General Public License.
+  See the LICENSE file for details about using this software.
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  Enterprise support available (compliance, plugins, interface and tools)
+################################################################################
+
+
+[+] [1;33mInitializing program[0m
+------------------------------------
+[2C- Detecting OS... [41C [ [1;32mDONE[0m ]
+[2C- Checking profiles...[37C [ [1;32mDONE[0m ]
+
+  ---------------------------------------------------
+  Program version:           3.1.6
+  Operating system:          Linux
+  Operating system name:     Ubuntu
+  Operating system version:  26.04
+  End-of-life:               [1;31mUNKNOWN[0m
+  Kernel version:            6.18.58.1
+  Hardware platform:         x86_64
+  Hostname:                  DESKTOP-7BR8OG8
+  ---------------------------------------------------
+  Profiles:                  /etc/lynis/default.prf
+  Log file:                  /var/log/lynis.log
+  Report file:               /var/log/lynis-report.dat
+  Report version:            1.0
+  Plugin directory:          /etc/lynis/plugins
+  ---------------------------------------------------
+  Auditor:                   [Not Specified]
+  Language:                  en
+  Test category:             all
+  Test group:                all
+  ---------------------------------------------------
+[2C- Program update status... [32C [ [1;32mNO UPDATE[0m ]
+
+      ===============================================================================
+        [0;36mLynis might be outdated[0m
+      ===============================================================================
+
+        [1;33mCurrent version is more than 6 months old[0m
+        This version might be [1;37mPlease check if there is a more recent version available.[0m
+
+        [1;37mPlease check if there is a more recent version available.[0m
+
+        Download locations:
+
+        Packages (DEB/RPM) -  https://packages.cisofy.com/
+        Website (TAR)      -  https://cisofy.com/downloads/
+        GitHub             -  https://github.com/CISOfy/lynis
+
+      ===============================================================================
+
+
+[+] [1;33mSystem tools[0m
+------------------------------------
+[2C- Scanning available tools...[30C
+[2C- Checking system binaries...[30C
+
+[+] [1;35mPlugins (phase 1)[0m
+------------------------------------
+[0CNote: plugins have more extensive tests and may take several minutes to complete[0C
+[0C [0C
+[2C- [0;36mPlugin[0m: [1;37mdebian[0m[21C
+    [
+[+] [1;33mDebian Tests[0m
+------------------------------------
+[2C- Checking for system binaries that are required by Debian Tests...[0C
+[4C- Checking /bin... [38C [ [1;32mFOUND[0m ]
+[4C- Checking /sbin... [37C [ [1;32mFOUND[0m ]
+[4C- Checking /usr/bin... [34C [ [1;32mFOUND[0m ]
+[4C- Checking /usr/sbin... [33C [ [1;32mFOUND[0m ]
+[4C- Checking /usr/local/bin... [28C [ [1;32mFOUND[0m ]
+[4C- Checking /usr/local/sbin... [27C [ [1;32mFOUND[0m ]
+[2C- Authentication:[42C
+[4C- PAM (Pluggable Authentication Modules):[16C
+
+  [30;43m[WARNING][0m: Test DEB-0001 had a long execution: 10.920685 seconds[0m
+
+[6C- libpam-tmpdir[40C [ [1;31mNot Installed[0m ]
+[2C- File System Checks:[38C
+[4C- DM-Crypt, Cryptsetup & Cryptmount:[21C
+[2C- Software:[48C
+[4C- apt-listbugs[43C [ [1;31mNot Installed[0m ]
+[4C- apt-listchanges[40C [ [1;31mNot Installed[0m ]
+[4C- needrestart[44C [ [1;31mNot Installed[0m ]
+[4C- fail2ban[47C [ [1;31mNot Installed[0m ]
+]
+
+[+] [1;33mBoot and services[0m
+------------------------------------
+[2C- Service Manager[42C [ [1;32msystemd[0m ]
+[2C- Checking UEFI boot[39C [ [1;37mDISABLED[0m ]
+[4C- Boot loader[44C [ [1;33mNONE FOUND[0m ]
+[2C- Check running services (systemctl)[23C [ [1;32mDONE[0m ]
+[8CResult: found 12 running services[20C
+[2C- Check enabled services at boot (systemctl)[15C [ [1;32mDONE[0m ]
+[8CResult: found 31 enabled services[20C
+[2C- Check startup files (permissions)[24C [ [1;32mOK[0m ]
+[2C- Running 'systemd-analyze security'[23C
+[6CUnit name (exposure value) and predicate[15C
+[6C--------------------------------[23C
+[4C- chrony.service (value=3.7)[29C [ [1;32mPROTECTED[0m ]
+[4C- dbus.service (value=9.2)[31C [ [1;33mUNSAFE[0m ]
+[4C- dmesg.service (value=9.6)[30C [ [1;33mUNSAFE[0m ]
+[4C- emergency.service (value=9.5)[26C [ [1;33mUNSAFE[0m ]
+[4C- landscape-client.service (value=9.6)[19C [ [1;33mUNSAFE[0m ]
+[4C- lynis.service (value=9.6)[30C [ [1;33mUNSAFE[0m ]
+[4C- networkd-dispatcher.service (value=9.6)[16C [ [1;33mUNSAFE[0m ]
+[4C- polkit.service (value=1.2)[29C [ [1;32mPROTECTED[0m ]
+[4C- rescue.service (value=9.5)[29C [ [1;33mUNSAFE[0m ]
+[4C- rsyslog.service (value=6.3)[28C [ [1;37mMEDIUM[0m ]
+[4C- snapd.service (value=9.9)[30C [ [1;33mUNSAFE[0m ]
+[4C- ssh.service (value=9.6)[32C [ [1;33mUNSAFE[0m ]
+[4C- sshd@sshd-keygen.service (value=9.6)[19C [ [1;33mUNSAFE[0m ]
+[4C- systemd-ask-password-console.service (value=9.4)[7C [ [1;33mUNSAFE[0m ]
+[4C- systemd-ask-password-wall.service (value=9.4)[10C [ [1;33mUNSAFE[0m ]
+[4C- systemd-bsod.service (value=9.5)[23C [ [1;33mUNSAFE[0m ]
+[4C- systemd-hostnamed.service (value=1.7)[18C [ [1;32mPROTECTED[0m ]
+[4C- systemd-journald.service (value=4.9)[19C [ [1;32mPROTECTED[0m ]
+[4C- systemd-logind.service (value=2.8)[21C [ [1;32mPROTECTED[0m ]
+[4C- systemd-networkd.service (value=2.9)[19C [ [1;32mPROTECTED[0m ]
+[4C- systemd-resolved.service (value=2.2)[19C [ [1;32mPROTECTED[0m ]
+[4C- systemd-udevd.service (value=7.1)[22C [ [1;37mMEDIUM[0m ]
+[4C- ubuntu-advantage.service (value=9.6)[19C [ [1;33mUNSAFE[0m ]
+[4C- unattended-upgrades.service (value=9.6)[16C [ [1;33mUNSAFE[0m ]
+[4C- user@1000.service (value=9.4)[26C [ [1;33mUNSAFE[0m ]
+[4C- wsl-pro.service (value=4.8)[28C [ [1;32mPROTECTED[0m ]
+
+[+] [1;33mKernel[0m
+------------------------------------
+[2C- Checking default runlevel[32C [ [1;32mrunlevel 5[0m ]
+[2C- Checking CPU support (NX/PAE)[28C
+[4CCPU support: PAE and/or NoeXecute supported[14C [ [1;32mFOUND[0m ]
+[2C- Checking kernel version and release[22C [ [1;32mDONE[0m ]
+[2C- Checking kernel type[37C [ [1;32mDONE[0m ]
+[2C- Checking loaded kernel modules[27C [ [1;32mDONE[0m ]
+[6CFound 8 active modules[33C
+[2C- Checking Linux kernel configuration file[17C [ [1;32mFOUND[0m ]
+[2C- Checking default I/O kernel scheduler[20C [ [1;37mNOT FOUND[0m ]
+/usr/bin/grep: /etc/kernel-img.conf: No such file or directory
+[2C- Checking core dumps configuration[24C
+[4C- configuration in systemd conf files[20C [ [1;37mDEFAULT[0m ]
+[4C- configuration in /etc/profile[26C [ [1;37mDEFAULT[0m ]
+[4C- 'hard' configuration in /etc/security/limits.conf[6C [ [1;31mENABLED[0m ]
+[4C- 'soft' configuration in /etc/security/limits.conf[6C [ [1;32mDISABLED[0m ]
+[4C- Checking setuid core dumps configuration[15C [ [1;32mDISABLED[0m ]
+[2C- Check if reboot is needed[32C [ [1;33mUNKNOWN[0m ]
+
+[+] [1;33mMemory and Processes[0m
+------------------------------------
+[2C- Checking /proc/meminfo[35C [ [1;32mFOUND[0m ]
+[2C- Searching for dead/zombie processes[22C [ [1;32mNOT FOUND[0m ]
+[2C- Searching for IO waiting processes[23C [ [1;32mNOT FOUND[0m ]
+[2C- Search prelink tooling[35C [ [1;32mNOT FOUND[0m ]
+
+[+] [1;33mUsers, Groups and Authentication[0m
+------------------------------------
+[2C- Administrator accounts[35C [ [1;32mOK[0m ]
+[2C- Unique UIDs[46C [ [1;32mOK[0m ]
+[2C- Consistency of group files (grpck)[23C [ [1;32mOK[0m ]
+[2C- Unique group IDs[41C [ [1;32mOK[0m ]
+[2C- Unique group names[39C [ [1;32mOK[0m ]
+[2C- Password file consistency[32C [ [1;32mOK[0m ]
+[2C- Password hashing methods[33C [ [1;32mOK[0m ]
+[2C- Checking password hashing rounds[25C [ [1;33mDISABLED[0m ]
+[2C- Query system users (non daemons)[25C [ [1;32mDONE[0m ]
+[2C- NIS+ authentication support[30C [ [1;37mNOT ENABLED[0m ]
+[2C- NIS authentication support[31C [ [1;37mNOT ENABLED[0m ]
+[2C- Sudoers file(s)[42C [ [1;32mFOUND[0m ]
+[4C- Permissions for directory: /etc/sudoers.d[14C [ [1;31mWARNING[0m ]
+[4C- Permissions for: /etc/sudoers[26C [ [1;32mOK[0m ]
+[4C- Permissions for: /etc/sudoers.d/README[17C [ [1;32mOK[0m ]
+[2C- PAM password strength tools[30C [ [1;33mSUGGESTION[0m ]
+[2C- PAM configuration files (pam.conf)[23C [ [1;32mFOUND[0m ]
+[2C- PAM configuration files (pam.d)[26C [ [1;32mFOUND[0m ]
+[2C- PAM modules[46C [ [1;32mFOUND[0m ]
+[2C- LDAP module in PAM[39C [ [1;37mNOT FOUND[0m ]
+[2C- Accounts without expire date[29C [ [1;33mSUGGESTION[0m ]
+[2C- Accounts without password[32C [ [1;32mOK[0m ]
+[2C- Locked accounts[42C [ [1;32mOK[0m ]
+[2C- Checking user password aging (minimum)[19C [ [1;33mDISABLED[0m ]
+[2C- User password aging (maximum)[28C [ [1;33mDISABLED[0m ]
+[2C- Checking expired passwords[31C [ [1;32mOK[0m ]
+[2C- Checking Linux single user mode authentication[11C [ [1;32mOK[0m ]
+[2C- Determining default umask[32C
+[4C- umask (/etc/profile and /etc/profile.d)[16C [ [1;32mOK[0m ]
+[4C- umask (/etc/login.defs)[32C [ [1;33mSUGGESTION[0m ]
+[2C- LDAP authentication support[30C [ [1;37mNOT ENABLED[0m ]
+[2C- Logging failed login attempts[28C [ [1;33mDISABLED[0m ]
+
+[+] [1;33mKerberos[0m
+------------------------------------
+[2C- Check for Kerberos KDC and principals[20C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mShells[0m
+------------------------------------
+[2C- Checking shells from /etc/shells[25C
+[4CResult: found 9 shells (valid shells: 9).[16C
+[4C- Session timeout settings/tools[25C [ [1;33mNONE[0m ]
+[2C- Checking default umask values[28C
+[4C- Checking default umask in /etc/bash.bashrc[13C [ [1;33mNONE[0m ]
+[4C- Checking default umask in /etc/profile[17C [ [1;32mOK[0m ]
+
+[+] [1;33mFile systems[0m
+------------------------------------
+[2C- Checking mount points[36C
+[4C- Checking /home mount point[29C [ [1;33mSUGGESTION[0m ]
+[4C- Checking /tmp mount point[30C [ [1;32mOK[0m ]
+[4C- Checking /var mount point[30C [ [1;33mSUGGESTION[0m ]
+[2C- Query swap partitions (fstab)[28C [ [1;33mNONE[0m ]
+[2C- Testing swap partitions[34C [ [1;32mOK[0m ]
+[2C- Testing /proc mount (hidepid)[28C [ [1;33mSUGGESTION[0m ]
+[2C- Checking for old files in /tmp[27C [ [1;32mOK[0m ]
+[2C- Checking /tmp sticky bit[33C [ [1;32mOK[0m ]
+[2C- Checking /var/tmp sticky bit[29C [ [1;32mOK[0m ]
+[2C- ACL support root file system[29C [ [1;32mENABLED[0m ]
+[2C- Mount options of /dev[36C [ [1;33mPARTIALLY HARDENED[0m ]
+[2C- Mount options of /dev/shm[32C [ [1;33mPARTIALLY HARDENED[0m ]
+[2C- Mount options of /run[36C [ [1;32mHARDENED[0m ]
+[2C- Mount options of /tmp[36C [ [1;33mPARTIALLY HARDENED[0m ]
+[2C- Total without nodev:16 noexec:26 nosuid:14 ro or noexec (W^X): 20 of total 39[0C
+[2C- Disable kernel support of some filesystems[15C
+
+[+] [1;33mUSB Devices[0m
+------------------------------------
+[2C- Checking usb-storage driver (modprobe config)[12C [ [1;37mNOT DISABLED[0m ]
+[2C- Checking USBGuard[40C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mStorage[0m
+------------------------------------
+[2C- Checking firewire ohci driver (modprobe config)[10C [ [1;32mDISABLED[0m ]
+
+[+] [1;33mNFS[0m
+------------------------------------
+[2C- Check running NFS daemon[33C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mName services[0m
+------------------------------------
+[2C- Searching DNS domain name[32C [ [1;32mFOUND[0m ]
+[6CDomain name: localdomain[31C
+[2C- Checking /etc/hosts[38C
+[4C- Duplicate entries in hosts file[24C [ [1;33mFOUND[0m ]
+[4C- Presence of configured hostname in /etc/hosts[10C [ [1;32mFOUND[0m ]
+[4C- Hostname mapped to localhost[27C [ [1;32mNOT FOUND[0m ]
+[4C- Localhost mapping to IP address[24C [ [1;32mOK[0m ]
+
+[+] [1;33mPorts and packages[0m
+------------------------------------
+[2C- Searching package managers[31C
+[4C- Searching dpkg package manager[25C [ [1;32mFOUND[0m ]
+[6C- Querying package manager[29C
+[4C- Query unpurged packages[32C [ [1;32mNONE[0m ]
+[2C- Checking security repository in sources.list.d directory[1C [ [1;32mOK[0m ]
+[2C- Checking APT package database[28C [ [1;32mOK[0m ]
+[2C- Checking vulnerable packages[29C [ [1;31mWARNING[0m ]
+
+  [30;43m[WARNING][0m: Test PKGS-7392 had a long execution: 62.264122 seconds[0m
+
+[2C- Checking upgradeable packages[28C [ [1;37mSKIPPED[0m ]
+[2C- Checking package audit tool[30C [ [1;32mINSTALLED[0m ]
+[4CFound: apt-get[43C
+
+=================================================================
+
+  [1;31mException found![0m
+
+  Function/test:  [PKGS-7410]
+  Message:        [1;37mCould not find any kernel packages via package manager[0m
+
+  Help improving the Lynis community with your feedback!
+
+  Steps:
+  - Ensure you are running the latest version (/usr/sbin/lynis update check)
+  - If so, create a GitHub issue at https://github.com/CISOfy/lynis
+  - Include relevant parts of the log file or configuration file
+
+  Thanks!
+
+=================================================================
+
+[2C- Toolkit for automatic upgrades (unattended-upgrade)[6C [ [1;32mFOUND[0m ]
+
+[+] [1;33mNetworking[0m
+------------------------------------
+[2C- Checking IPv6 configuration[30C [ [1;37mENABLED[0m ]
+[6CConfiguration method[35C [ [1;37mAUTO[0m ]
+[6CIPv6 only[46C [ [1;37mNO[0m ]
+[2C- Checking configured nameservers[26C
+[4C- Testing nameservers[36C
+[6CNameserver: 172.28.208.1[31C [ [1;33mSKIPPED[0m ]
+[4C- Minimal of 2 responsive nameservers[20C [ [1;33mSKIPPED[0m ]
+[4C- DNSSEC supported (systemd-resolved)[20C [ [1;31mUNKNOWN[0m ]
+[2C- Getting listening ports (TCP/UDP)[24C [ [1;32mDONE[0m ]
+[2C- Checking promiscuous interfaces[26C [ [1;32mOK[0m ]
+[2C- Checking status DHCP client[30C [ [1;37mNOT ACTIVE[0m ]
+[2C- Checking for ARP monitoring software[21C [ [1;33mNOT FOUND[0m ]
+[2C- Uncommon network protocols[31C [ [1;33m0[0m ]
+
+[+] [1;33mPrinters and Spools[0m
+------------------------------------
+[2C- Checking cups daemon[37C [ [1;37mNOT FOUND[0m ]
+[2C- Checking lp daemon[39C [ [1;37mNOT RUNNING[0m ]
+
+[+] [1;33mSoftware: e-mail and messaging[0m
+------------------------------------
+
+[+] [1;33mSoftware: firewalls[0m
+------------------------------------
+[2C- Checking iptables kernel module[26C [ [1;32mFOUND[0m ]
+[2C- Checking host based firewall[29C [ [1;32mACTIVE[0m ]
+
+[+] [1;33mSoftware: webserver[0m
+------------------------------------
+[2C- Checking Apache[42C [ [1;37mNOT FOUND[0m ]
+[2C- Checking nginx[43C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mSSH Support[0m
+------------------------------------
+[2C- Checking running SSH daemon[30C [ [1;32mFOUND[0m ]
+[4C- Searching SSH configuration[28C [ [1;32mFOUND[0m ]
+[4C- OpenSSH option: AllowTcpForwarding[21C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: ClientAliveCountMax[20C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: ClientAliveInterval[20C [ [1;32mOK[0m ]
+[4C- OpenSSH option: FingerprintHash[24C [ [1;32mOK[0m ]
+[4C- OpenSSH option: GatewayPorts[27C [ [1;32mOK[0m ]
+[4C- OpenSSH option: IgnoreRhosts[27C [ [1;32mOK[0m ]
+[4C- OpenSSH option: LoginGraceTime[25C [ [1;32mOK[0m ]
+[4C- OpenSSH option: LogLevel[31C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: MaxAuthTries[27C [ [1;32mOK[0m ]
+[4C- OpenSSH option: MaxSessions[28C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: PermitRootLogin[24C [ [1;32mOK[0m ]
+[4C- OpenSSH option: PermitUserEnvironment[18C [ [1;32mOK[0m ]
+[4C- OpenSSH option: PermitTunnel[27C [ [1;32mOK[0m ]
+[4C- OpenSSH option: Port[35C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: PrintLastLog[27C [ [1;32mOK[0m ]
+[4C- OpenSSH option: StrictModes[28C [ [1;32mOK[0m ]
+[4C- OpenSSH option: TCPKeepAlive[27C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: UseDNS[33C [ [1;32mOK[0m ]
+[4C- OpenSSH option: X11Forwarding[26C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: AllowAgentForwarding[19C [ [1;33mSUGGESTION[0m ]
+[4C- OpenSSH option: AllowUsers[29C [ [1;37mNOT FOUND[0m ]
+[4C- OpenSSH option: AllowGroups[28C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mSNMP Support[0m
+------------------------------------
+[2C- Checking running SNMP daemon[29C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mDatabases[0m
+------------------------------------
+[4CNo database engines found[32C
+
+[+] [1;33mLDAP Services[0m
+------------------------------------
+[2C- Checking OpenLDAP instance[31C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mPHP[0m
+------------------------------------
+[2C- Checking PHP[45C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mSquid Support[0m
+------------------------------------
+[2C- Checking running Squid daemon[28C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mLogging and files[0m
+------------------------------------
+[2C- Checking for a running log daemon[24C [ [1;32mOK[0m ]
+[4C- Checking Syslog-NG status[30C [ [1;37mNOT FOUND[0m ]
+[4C- Checking systemd journal status[24C [ [1;32mFOUND[0m ]
+[4C- Checking Metalog status[32C [ [1;37mNOT FOUND[0m ]
+[4C- Checking RSyslog status[32C [ [1;32mFOUND[0m ]
+[4C- Checking RFC 3195 daemon status[24C [ [1;37mNOT FOUND[0m ]
+[4C- Checking minilogd instances[28C [ [1;37mNOT FOUND[0m ]
+[4C- Checking wazuh-agent daemon status[21C [ [1;37mNOT FOUND[0m ]
+[2C- Checking logrotate presence[30C [ [1;32mOK[0m ]
+[2C- Checking remote logging[34C [ [1;33mNOT ENABLED[0m ]
+[2C- Checking log directories (static list)[19C [ [1;32mDONE[0m ]
+[2C- Checking open log files[34C [ [1;32mDONE[0m ]
+[2C- Checking deleted files in use[28C [ [1;32mDONE[0m ]
+
+[+] [1;33mInsecure services[0m
+------------------------------------
+[2C- Installed inetd package[34C [ [1;32mNOT FOUND[0m ]
+[2C- Installed xinetd package[33C [ [1;32mOK[0m ]
+[4C- xinetd status[42C [ [1;32mNOT ACTIVE[0m ]
+[2C- Installed rsh client package[29C [ [1;32mOK[0m ]
+[2C- Installed rsh server package[29C [ [1;32mOK[0m ]
+[2C- Installed telnet client package[26C [ [1;32mOK[0m ]
+[2C- Installed telnet server package[26C [ [1;32mNOT FOUND[0m ]
+[2C- Checking NIS client installation[25C [ [1;32mOK[0m ]
+[2C- Checking NIS server installation[25C [ [1;32mOK[0m ]
+[2C- Checking TFTP client installation[24C [ [1;32mOK[0m ]
+[2C- Checking TFTP server installation[24C [ [1;32mOK[0m ]
+
+[+] [1;33mBanners and identification[0m
+------------------------------------
+[2C- /etc/issue[47C [ [1;32mFOUND[0m ]
+[4C- /etc/issue contents[36C [ [1;33mWEAK[0m ]
+[2C- /etc/issue.net[43C [ [1;32mFOUND[0m ]
+[4C- /etc/issue.net contents[32C [ [1;33mWEAK[0m ]
+
+[+] [1;33mScheduled tasks[0m
+------------------------------------
+[2C- Checking crontab and cronjob files[23C [ [1;32mDONE[0m ]
+
+[+] [1;33mAccounting[0m
+------------------------------------
+[2C- Checking accounting information[26C [ [1;33mNOT FOUND[0m ]
+[2C- Checking sysstat accounting data[25C [ [1;33mNOT FOUND[0m ]
+[2C- Checking auditd[42C [ [1;37mNOT FOUND[0m ]
+
+[+] [1;33mTime and Synchronization[0m
+------------------------------------
+[2C- NTP daemon found: chronyd[32C [ [1;32mFOUND[0m ]
+[2C- Checking for a running NTP daemon or client[14C [ [1;32mOK[0m ]
+
+[+] [1;33mCryptography[0m
+------------------------------------
+[2C- Checking for expired SSL certificates [0/121][12C [ [1;32mNONE[0m ]
+[2C- Kernel entropy is sufficient[29C [ [1;32mYES[0m ]
+[2C- HW RNG & rngd[44C [ [1;33mNO[0m ]
+[2C- SW prng[50C [ [1;33mNO[0m ]
+[2C- MOR variable not found[35C [ [1;37mWEAK[0m ]
+
+[+] [1;33mVirtualization[0m
+------------------------------------
+
+[+] [1;33mContainers[0m
+------------------------------------
+[8C- Docker status[38C [ [1;31mERROR[0m ]
+[8C- Docker info output (warnings)[22C [ [1;32mNONE[0m ]
+
+[+] [1;33mSecurity frameworks[0m
+------------------------------------
+[2C- Checking presence AppArmor[31C [ [1;32mFOUND[0m ]
+[4C- Checking AppArmor status[31C [ [1;33mUNKNOWN[0m ]
+[2C- Checking presence SELinux[32C [ [1;37mNOT FOUND[0m ]
+[2C- Checking presence TOMOYO Linux[27C [ [1;37mNOT FOUND[0m ]
+[2C- Checking presence grsecurity[29C [ [1;37mNOT FOUND[0m ]
+[2C- Checking for implemented MAC framework[19C [ [1;33mNONE[0m ]
+
+[+] [1;33mSoftware: file integrity[0m
+------------------------------------
+[2C- Checking file integrity tools[28C
+[2C- Checking presence integrity tool[25C [ [1;33mNOT FOUND[0m ]
+
+[+] [1;33mSoftware: System tooling[0m
+------------------------------------
+[2C- Checking automation tooling[30C
+[2C- Automation tooling[39C [ [1;33mNOT FOUND[0m ]
+[2C- Checking for IDS/IPS tooling[29C [ [1;33mNONE[0m ]
+
+[+] [1;33mSoftware: Malware[0m
+------------------------------------
+[2C- Malware software components[30C [ [1;33mNOT FOUND[0m ]
+
+[+] [1;33mFile Permissions[0m
+------------------------------------
+[2C- Starting file permissions check[26C
+[4CFile: /etc/crontab[39C [ [1;33mSUGGESTION[0m ]
+[4CFile: /etc/group[41C [ [1;32mOK[0m ]
+[4CFile: /etc/group-[40C [ [1;32mOK[0m ]
+[4CFile: /etc/hosts.allow[35C [ [1;32mOK[0m ]
+[4CFile: /etc/hosts.deny[36C [ [1;32mOK[0m ]
+[4CFile: /etc/issue[41C [ [1;32mOK[0m ]
+[4CFile: /etc/issue.net[37C [ [1;32mOK[0m ]
+[4CFile: /etc/passwd[40C [ [1;32mOK[0m ]
+[4CFile: /etc/passwd-[39C [ [1;32mOK[0m ]
+[4CFile: /etc/ssh/sshd_config[31C [ [1;33mSUGGESTION[0m ]
+[4CDirectory: /root/.ssh[36C [ [1;32mOK[0m ]
+[4CDirectory: /etc/cron.d[35C [ [1;33mSUGGESTION[0m ]
+[4CDirectory: /etc/cron.daily[31C [ [1;33mSUGGESTION[0m ]
+[4CDirectory: /etc/cron.hourly[30C [ [1;33mSUGGESTION[0m ]
+[4CDirectory: /etc/cron.weekly[30C [ [1;33mSUGGESTION[0m ]
+[4CDirectory: /etc/cron.monthly[29C [ [1;33mSUGGESTION[0m ]
+
+[+] [1;33mHome directories[0m
+------------------------------------
+[2C- Permissions of home directories[26C [ [1;32mOK[0m ]
+[2C- Ownership of home directories[28C [ [1;32mOK[0m ]
+[2C- Checking shell history files[29C [ [1;32mOK[0m ]
+
+[+] [1;33mKernel Hardening[0m
+------------------------------------
+[2C- Comparing sysctl key pairs with scan profile[13C
+[4C- dev.tty.ldisc_autoload (exp: 0)[24C [ [1;32mOK[0m ]
+[4C- fs.protected_fifos (exp: 2)[28C [ [1;31mDIFFERENT[0m ]
+[4C- fs.protected_hardlinks (exp: 1)[24C [ [1;32mOK[0m ]
+[4C- fs.protected_regular (exp: 2)[26C [ [1;32mOK[0m ]
+[4C- fs.protected_symlinks (exp: 1)[25C [ [1;32mOK[0m ]
+[4C- fs.suid_dumpable (exp: 0)[30C [ [1;32mOK[0m ]
+[4C- kernel.core_uses_pid (exp: 1)[26C [ [1;32mOK[0m ]
+[4C- kernel.ctrl-alt-del (exp: 0)[27C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.dmesg_restrict (exp: 1)[25C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.kptr_restrict (exp: 2)[26C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.modules_disabled (exp: 1)[23C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.perf_event_paranoid (exp: 2 3 4)[16C [ [1;32mOK[0m ]
+[4C- kernel.randomize_va_space (exp: 2)[21C [ [1;32mOK[0m ]
+[4C- kernel.sysrq (exp: 0)[34C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.unprivileged_bpf_disabled (exp: 1)[14C [ [1;31mDIFFERENT[0m ]
+[4C- kernel.yama.ptrace_scope (exp: 1 2 3)[18C [ [1;32mOK[0m ]
+[4C- net.core.bpf_jit_harden (exp: 2)[23C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.all.accept_redirects (exp: 0)[12C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.all.accept_source_route (exp: 0)[9C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.all.bootp_relay (exp: 0)[17C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.all.forwarding (exp: 0)[18C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.all.log_martians (exp: 1)[16C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.all.mc_forwarding (exp: 0)[15C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.all.proxy_arp (exp: 0)[19C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.all.rp_filter (exp: 1)[19C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.all.send_redirects (exp: 0)[14C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.default.accept_redirects (exp: 0)[8C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.conf.default.accept_source_route (exp: 0)[5C [ [1;32mOK[0m ]
+[4C- net.ipv4.conf.default.log_martians (exp: 1)[12C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv4.icmp_echo_ignore_broadcasts (exp: 1)[10C [ [1;32mOK[0m ]
+[4C- net.ipv4.icmp_ignore_bogus_error_responses (exp: 1)[4C [ [1;32mOK[0m ]
+[4C- net.ipv4.tcp_syncookies (exp: 1)[23C [ [1;32mOK[0m ]
+[4C- net.ipv4.tcp_timestamps (exp: 0 1)[21C [ [1;32mOK[0m ]
+[4C- net.ipv6.conf.all.accept_redirects (exp: 0)[12C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv6.conf.all.accept_source_route (exp: 0)[9C [ [1;32mOK[0m ]
+[4C- net.ipv6.conf.default.accept_redirects (exp: 0)[8C [ [1;31mDIFFERENT[0m ]
+[4C- net.ipv6.conf.default.accept_source_route (exp: 0)[5C [ [1;32mOK[0m ]
+
+[+] [1;33mHardening[0m
+------------------------------------
+[4C- Installed compiler(s)[34C [ [1;31mFOUND[0m ]
+[4C- Installed malware scanner[30C [ [1;31mNOT FOUND[0m ]
+[4C- Non-native binary formats[30C [ [1;31mFOUND[0m ]
+
+[+] [1;33mCustom tests[0m
+------------------------------------
+[2C- Running custom tests... [33C [ [1;37mNONE[0m ]
+
+[+] [1;35mPlugins (phase 2)[0m
+------------------------------------
+
+================================================================================
+
+  -[ [1;37mLynis 3.1.6 Results[0m ]-
+
+  [1;31mWarnings[0m (1):
+  [1;37m----------------------------[0m
+  [1;31m![0m Found one or more vulnerable packages. [PKGS-7392] 
+      https://cisofy.com/lynis/controls/PKGS-7392/
+
+  [1;33mSuggestions[0m (46):
+  [1;37m----------------------------[0m
+  [1;33m*[0m Install libpam-tmpdir to set $TMP and $TMPDIR for PAM sessions [DEB-0280] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/DEB-0280/[0m
+
+  [1;33m*[0m Install apt-listbugs to display a list of critical bugs prior to each APT installation. [DEB-0810] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/DEB-0810/[0m
+
+  [1;33m*[0m Install apt-listchanges to display any significant changes prior to any upgrade via APT. [DEB-0811] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/DEB-0811/[0m
+
+  [1;33m*[0m Install needrestart, alternatively to debian-goodies, so that you can run needrestart after upgrades to determine which daemons are using old versions of libraries and need restarting. [DEB-0831] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/DEB-0831/[0m
+
+  [1;33m*[0m Install fail2ban to automatically ban hosts that commit multiple authentication errors. [DEB-0880] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/DEB-0880/[0m
+
+  [1;33m*[0m Determine runlevel and services at startup [BOOT-5180] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/BOOT-5180/[0m
+
+  [1;33m*[0m Consider hardening system services [BOOT-5264] 
+    - Details  : [0;36mRun '/usr/bin/systemd-analyze security SERVICE' for each service[0m
+    - Related resources
+      * Article: [0;36mSystemd features to secure service files[0m: https://linux-audit.com/systemd/systemd-features-to-secure-units-and-services/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/BOOT-5264/[0m
+
+  [1;33m*[0m Determine why /vmlinuz or /boot/vmlinuz is missing on this Debian/Ubuntu system. [KRNL-5788] 
+    - Details  : [0;36m/vmlinuz or /boot/vmlinuz[0m
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/KRNL-5788/[0m
+
+  [1;33m*[0m Configure password hashing rounds in /etc/login.defs [AUTH-9230] 
+    - Related resources
+      * Article: [0;36mLinux password security: hashing rounds[0m: https://linux-audit.com/authentication/configure-the-minimum-password-length-on-linux-systems/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9230/[0m
+
+  [1;33m*[0m Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc or libpam-passwdqc [AUTH-9262] 
+    - Related resources
+      * Article: [0;36mConfigure minimum password length for Linux systems[0m: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9262/[0m
+
+  [1;33m*[0m When possible set expire dates for all password protected accounts [AUTH-9282] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9282/[0m
+
+  [1;33m*[0m Configure minimum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: [0;36mConfigure minimum password length for Linux systems[0m: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9286/[0m
+
+  [1;33m*[0m Configure maximum password age in /etc/login.defs [AUTH-9286] 
+    - Related resources
+      * Article: [0;36mConfigure minimum password length for Linux systems[0m: https://linux-audit.com/configure-the-minimum-password-length-on-linux-systems/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9286/[0m
+
+  [1;33m*[0m Default umask in /etc/login.defs could not be found and defaults usually to 022, which could be more strict like 027 [AUTH-9328] 
+    - Related resources
+      * Article: [0;36mSet default file permissions on Linux with umask[0m: https://linux-audit.com/filesystems/file-permissions/set-default-file-permissions-with-umask/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/AUTH-9328/[0m
+
+  [1;33m*[0m To decrease the impact of a full /home file system, place /home on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/FILE-6310/[0m
+
+  [1;33m*[0m To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/FILE-6310/[0m
+
+  [1;33m*[0m Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/USB-1000/[0m
+
+  [1;33m*[0m Remove duplicate lines in /etc/hosts [NAME-4402] 
+    - Related resources
+      * Article: [0;36mKeeping your /etc/hosts file healthy[0m: https://linux-audit.com/is-your-etc-hosts-file-healthy/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/NAME-4402/[0m
+
+  [1;33m*[0m Install debsums utility for the verification of packages with known good database. [PKGS-7370] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/PKGS-7370/[0m
+
+  [1;33m*[0m Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades [PKGS-7392] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/PKGS-7392/[0m
+
+  [1;33m*[0m Install package apt-show-versions for patch management purposes [PKGS-7394] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/PKGS-7394/[0m
+
+  [1;33m*[0m Determine if protocol 'dccp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/NETW-3200/[0m
+
+  [1;33m*[0m Determine if protocol 'sctp' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/NETW-3200/[0m
+
+  [1;33m*[0m Determine if protocol 'rds' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/NETW-3200/[0m
+
+  [1;33m*[0m Determine if protocol 'tipc' is really needed on this system [NETW-3200] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/NETW-3200/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mAllowTcpForwarding (set YES to NO)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mClientAliveCountMax (set 3 to 2)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mLogLevel (set INFO to VERBOSE)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mMaxSessions (set 10 to 2)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mPort (set 22 to )[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mTCPKeepAlive (set YES to NO)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mX11Forwarding (set YES to NO)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Consider hardening SSH configuration [SSH-7408] 
+    - Details  : [0;36mAllowAgentForwarding (set YES to NO)[0m
+    - Related resources
+      * Article: [0;36mOpenSSH security and hardening[0m: https://linux-audit.com/ssh/audit-and-harden-your-ssh-configuration/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/SSH-7408/[0m
+
+  [1;33m*[0m Enable logging to an external logging host for archiving purposes and additional protection [LOGG-2154] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/LOGG-2154/[0m
+
+  [1;33m*[0m Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126] 
+    - Related resources
+      * Article: [0;36mThe real purpose of login banners[0m: https://linux-audit.com/the-real-purpose-of-login-banners-on-linux/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/BANN-7126/[0m
+
+  [1;33m*[0m Add legal banner to /etc/issue.net, to warn unauthorized users [BANN-7130] 
+    - Related resources
+      * Article: [0;36mThe real purpose of login banners[0m: https://linux-audit.com/the-real-purpose-of-login-banners-on-linux/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/BANN-7130/[0m
+
+  [1;33m*[0m Enable process accounting [ACCT-9622] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/ACCT-9622/[0m
+
+  [1;33m*[0m Enable sysstat to collect accounting (no results) [ACCT-9626] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/ACCT-9626/[0m
+
+  [1;33m*[0m Enable auditd to collect audit information [ACCT-9628] 
+    - Related resources
+      * Article: [0;36mLinux audit framework 101: basic rules for configuration[0m: https://linux-audit.com/linux-audit-framework/linux-audit-framework-101-basic-rules-for-configuration/
+      * Article: [0;36mMonitoring Linux file access, changes and data modifications[0m: https://linux-audit.com/monitoring-linux-file-access-changes-and-modifications/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/ACCT-9628/[0m
+
+  [1;33m*[0m Check output of aa-status [MACF-6208] 
+    - Details  : [0;36m/sys/kernel/security/apparmor/profiles[0m
+    - Solution : Run aa-status
+    - Related resources
+      * Article: [0;36mAppArmor[0m: https://linux-audit.com/security-frameworks/apparmor/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/MACF-6208/[0m
+
+  [1;33m*[0m Install a file integrity tool to monitor changes to critical and sensitive files [FINT-4350] 
+    - Related resources
+      * Article: [0;36mMonitoring Linux file access, changes and data modifications[0m: https://linux-audit.com/monitoring-linux-file-access-changes-and-modifications/
+      * Article: [0;36mMonitor for file changes on Linux[0m: https://linux-audit.com/monitor-for-file-system-changes-on-linux/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/FINT-4350/[0m
+
+  [1;33m*[0m Determine if automation tools are present for system management [TOOL-5002] 
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/TOOL-5002/[0m
+
+  [1;33m*[0m Consider restricting file permissions [FILE-7524] 
+    - Details  : [0;36mSee screen output or log file[0m
+    - Solution : Use chmod to change file permissions
+    - Related resources
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/FILE-7524/[0m
+
+  [1;33m*[0m One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] 
+    - Solution : Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)
+    - Related resources
+      * Article: [0;36mLinux hardening with sysctl settings[0m: https://linux-audit.com/linux-hardening-with-sysctl/
+      * Article: [0;36mOverview of sysctl options and values[0m: https://linux-audit.com/kernel/sysctl/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/KRNL-6000/[0m
+
+  [1;33m*[0m Harden compilers like restricting access to root user only [HRDN-7222] 
+    - Related resources
+      * Article: [0;36mWhy remove compilers from your system?[0m: https://linux-audit.com/software/why-remove-compilers-from-your-system/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/HRDN-7222/[0m
+
+  [1;33m*[0m Harden the system by installing at least one malware scanner, to perform periodic file system scans [HRDN-7230] 
+    - Solution : Install a tool like rkhunter, chkrootkit, OSSEC, Wazuh
+    - Related resources
+      * Article: [0;36mAntivirus for Linux: is it really needed?[0m: https://linux-audit.com/malware/antivirus-for-linux-really-needed/
+      * Article: [0;36mMonitoring Linux Systems for Rootkits[0m: https://linux-audit.com/monitoring-linux-systems-for-rootkits/
+      * Website: [0;37mhttps://cisofy.com/lynis/controls/HRDN-7230/[0m
+
+  [0;36mFollow-up[0m:
+  [1;37m----------------------------[0m
+  [1;37m-[0m Show details of a test (lynis show details TEST-ID)
+  [1;37m-[0m Check the logfile for all details (less /var/log/lynis.log)
+  [1;37m-[0m Read security controls texts (https://cisofy.com)
+  [1;37m-[0m Use --upload to upload data to central system (Lynis Enterprise users)
+
+================================================================================
+
+  [1;37mLynis security scan details[0m:
+
+  [1;33mScan mode[0m:
+  Normal [▆]  Forensics [ ]  Integration [ ]  Pentest [ ]
+
+  [1;33mLynis modules[0m:
+  - Compliance status      [[1;33m?[0m]
+  - Security audit         [[1;32mV[0m]
+  - Vulnerability scan     [[1;32mV[0m]
+
+  [1;33mDetails[0m:
+  [0;36mHardening index[0m : [1;37m66[0m [[1;33m#############[0m       ]
+  [0;36mTests performed[0m : [1;37m249[0m
+  [0;36mPlugins enabled[0m : [1;37m1[0m
+
+  [1;33mSoftware components[0m:
+  - Firewall               [[1;32mV[0m]
+  - Intrusion software     [[1;31mX[0m]
+  - Malware scanner        [[1;31mX[0m]
+
+  [1;33mFiles[0m:
+  - Test and debug information      : [1;37m/var/log/lynis.log[0m
+  - Report data                     : [1;37m/var/log/lynis-report.dat[0m
+
+================================================================================
+
+  [1;33mNotice: [1;37mThis version of Lynis is older than 6 months and might be outdated. Check the project page if a newer version is available.[0m
+
+================================================================================
+
+  [1;31mExceptions found[0m
+  [1;37mSome exceptional events or information was found![0m
+
+  [0;36mWhat to do:[0m
+  You can help by providing your log file (/var/log/lynis.log).
+  Go to https://cisofy.com/contact/ and send your file to the e-mail address listed
+
+================================================================================
+
+  [1;33mNotice: [1;37mNo OS entry was found in the end-of-life database[0m
+
+  [0;36mWhat to do:[0m
+  Please submit a pull request on GitHub to include your OS version and the end date of this OS version is being supported
+  URL: https://github.com/CISOfy/lynis
+
+================================================================================
+
+  [1;37mLynis[0m 3.1.6
+
+  Auditing, system hardening, and compliance for UNIX-based systems
+  (Linux, macOS, BSD, and others)
+
+  2007-2025, CISOfy - https://cisofy.com/lynis/
+  [1;37mEnterprise support available (compliance, plugins, interface and tools)[0m
+
+================================================================================
+
+  [0;44m[TIP][0m: [0;94mEnhance Lynis audits by adding your settings to custom.prf (see /etc/lynis/default.prf for all settings)[0m
+
+]3008;end=c689c97c-1508-4fd4-9892-976aa72533b0;exit=success\]3008;start=487b03cc-7c8c-45a4-a1b6-90b33ef1f374;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=shell;cwd=/mnt/c/Users/jlmpi\[?2004hjlmpi@DESKTOP-7BR8OG8:/mnt/c/Users/jlmpi$ exit
+[?2004l]3008;start=82b14fb6-f694-43e3-b66f-cf0dea9428d1;machineid=c2179a9678684017828c5a2d0485ee2d;user=jlmpi;hostname=DESKTOP-7BR8OG8;bootid=a4ed311c-deed-4820-a9e1-2310ddfcf81d;pid=00000000000000000496;type=command;cwd=/mnt/c/Users/jlmpi\exit
+
+Script done on 2026-11-23 03:46:12-05:00 [COMMAND_EXIT_CODE="0"]
