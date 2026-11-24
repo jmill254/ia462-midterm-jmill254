@@ -1,0 +1,429 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261123104359
+Username: DESKTOP-7BR8OG8\jlmpi
+RunAs User: DESKTOP-7BR8OG8\jlmpi
+Configuration Name: 
+Machine: DESKTOP-7BR8OG8 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 14320
+PSVersion: 5.1.19041.6456
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6456
+BuildVersion: 10.0.19041.6456
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\jlmpi\Desktop\windows-transcript.txt
+PS C:\WINDOWS\system32> Get-MpComputerStatus | Select-Object AMServiceEnabled, AntivirusEnabled, RealTimeProtectionEnabled, IsTamperProtected, AMEngineVersion, AntivirusSignatureLastUpdated
+
+
+AMServiceEnabled              : True
+AntivirusEnabled              : True
+RealTimeProtectionEnabled     : True
+IsTamperProtected             : True
+AMEngineVersion               : 1.1.26100.4
+AntivirusSignatureLastUpdated : 11/23/2026 4:40:52 AM
+
+
+
+PS C:\WINDOWS\system32> Get-NetFirewallProfile | Select-Object Name, Enabled, DefaultInboundAction, DefaultOutboundAction, LogAllowed, LogBlocked
+
+
+Name                  : Domain
+Enabled               : True
+DefaultInboundAction  : NotConfigured
+DefaultOutboundAction : NotConfigured
+LogAllowed            : False
+LogBlocked            : False
+
+Name                  : Private
+Enabled               : True
+DefaultInboundAction  : NotConfigured
+DefaultOutboundAction : NotConfigured
+LogAllowed            : False
+LogBlocked            : False
+
+Name                  : Public
+Enabled               : True
+DefaultInboundAction  : NotConfigured
+DefaultOutboundAction : NotConfigured
+LogAllowed            : False
+LogBlocked            : False
+
+
+
+PS C:\WINDOWS\system32> Get-SmbServerConfiguration | Select-Object EnableSMB1Protocol
+
+EnableSMB1Protocol
+------------------
+             False
+
+
+PS C:\WINDOWS\system32> auditpol /set /subcategory:"Process Creation" /success:enable /failure:enable
+The command was successfully executed.
+PS C:\WINDOWS\system32> reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1 /f
+The operation completed successfully.
+PS C:\WINDOWS\system32> $sbl = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging"
+PS C:\WINDOWS\system32> if (-not (Test-Path $sbl)) { New-Item -Path $sbl -Force | Out-Null }
+PS C:\WINDOWS\system32> Set-ItemProperty -Path $sbl -Name EnableScriptBlockLogging -Value 1
+PS C:\WINDOWS\system32> $dest = "$env:USERPROFILE\Downloads\lab3-win"
+PS C:\WINDOWS\system32> New-Item -ItemType Directory -Force -Path $dest | Out-Null
+PS C:\WINDOWS\system32> Invoke-WebRequest -Uri "https://download.sysinternals.com/files/Sysmon.zip" -OutFile
+>> TerminatingError(Invoke-WebRequest): "Missing an argument for parameter 'OutFile'. Specify a parameter of type 'System.String' and try again."
+Invoke-WebRequest : Missing an argument for parameter 'OutFile'. Specify a parameter of type 'System.String' and try 
+again.
+At line:1 char:77
++ ... st -Uri "https://download.sysinternals.com/files/Sysmon.zip" -OutFile
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-WebRequest], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+Invoke-WebRequest : Missing an argument for parameter 'OutFile'. Specify a parameter of type 'System.String' and try again.
+At line:1 char:77
++ ... st -Uri "https://download.sysinternals.com/files/Sysmon.zip" -OutFile
++                                                                  ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Invoke-WebRequest], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\WINDOWS\system32> Invoke-WebRequest -Uri "https://download.sysinternals.com/files/Sysmon.zip" -OutFile "$dest\Sysmon.zip"
+PS C:\WINDOWS\system32> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml" -OutFile "$dest\sysmonconfig.xml"
+PS C:\WINDOWS\system32> Expand-Archive "$dest\Sysmon.zip" -DestinationPath $dest -Force
+PS C:\WINDOWS\system32> Set-Location $dest
+PS C:\Users\jlmpi\Downloads\lab3-win> .\Sysmon64.exe -accepteula -i sysmonconfig.xml
+
+
+System Monitor v15.22 - System activity monitor
+By Mark Russinovich and Thomas Garnier
+Copyright (C) 2014-2026 Microsoft Corporation
+Using libxml2. libxml2 is Copyright (C) 1998-2012 Daniel Veillard. All Rights Reserved.
+Sysinternals - www.sysinternals.com
+
+Loading configuration file with schema version 4.50
+Sysmon schema version: 4.91
+Configuration file validated.
+The service Sysmon64 is already registered. Uninstall Sysmon before reinstalling.
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-Service Sysmon64
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  Sysmon64           Sysmon64
+
+
+PS C:\Users\jlmpi\Downloads\lab3-win> $cmd = 'Write-Host "Lab 3 - simulated encoded PowerShell activity"'
+PS C:\Users\jlmpi\Downloads\lab3-win> $b64 = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($cmd))
+PS C:\Users\jlmpi\Downloads\lab3-win> powershell.exe -EncodedCommand $b64
+Lab 3 - simulated encoded PowerShell activity
+PS C:\Users\jlmpi\Downloads\lab3-win> net user lab3suspect P@ssw0rd! /add
+The command completed successfully.
+PS C:\Users\jlmpi\Downloads\lab3-win> net user lab3suspect /delete
+The command completed successfully.
+PS C:\Users\jlmpi\Downloads\lab3-win> Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "runas /user:BadUser1 cmd" -ErrorAction SilentlyContinue
+PS C:\Users\jlmpi\Downloads\lab3-win>   Format-Table -Wrap
+  Select-Object TimeCreated, Id, @{n='Msg';e={ ($_.Message -split "`n")[0] }} |
+Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 40 |
+
+At line:3 char:92
++ ... shtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 40 |
++                                                                          ~
+An empty pipe element is not allowed.
+At line:3 char:92
++ ... shtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 40 |
++                                                                          ~
+An empty pipe element is not allowed.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : EmptyPipeElement
+
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 40 | Select-Object TimeCreated, Id, @{n='Msg';e={ ($_.Message -split "`n")[0] }} | Format-Table -Wrap
+
+TimeCreated              Id Msg
+-----------              -- ---
+11/23/2026 11:50:59 AM 4688 A new process has been created.
+11/23/2026 11:50:54 AM 4688 A new process has been created.
+11/23/2026 11:50:35 AM 4688 A new process has been created.
+11/23/2026 11:50:19 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:49:54 AM 4688 A new process has been created.
+11/23/2026 11:49:54 AM 4688 A new process has been created.
+11/23/2026 11:49:53 AM 4688 A new process has been created.
+11/23/2026 11:49:44 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+
+
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 200 | Select-Object TimeCreated, Id, @{n='Msg';e={ ($_.Message -split "`n")[0] }} | Format-Table -Wrap
+
+TimeCreated              Id Msg
+-----------              -- ---
+11/23/2026 11:53:31 AM 4688 A new process has been created.
+11/23/2026 11:53:29 AM 4688 A new process has been created.
+11/23/2026 11:52:20 AM 4688 A new process has been created.
+11/23/2026 11:51:16 AM 4688 A new process has been created.
+11/23/2026 11:51:10 AM 4688 A new process has been created.
+11/23/2026 11:50:59 AM 4688 A new process has been created.
+11/23/2026 11:50:54 AM 4688 A new process has been created.
+11/23/2026 11:50:35 AM 4688 A new process has been created.
+11/23/2026 11:50:19 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:50:18 AM 4688 A new process has been created.
+11/23/2026 11:49:54 AM 4688 A new process has been created.
+11/23/2026 11:49:54 AM 4688 A new process has been created.
+11/23/2026 11:49:53 AM 4688 A new process has been created.
+11/23/2026 11:49:44 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:49 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:48 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:47 AM 4688 A new process has been created.
+11/23/2026 11:48:23 AM 4688 A new process has been created.
+11/23/2026 11:47:05 AM 4625 An account failed to log on.
+11/23/2026 11:47:00 AM 4688 A new process has been created.
+11/23/2026 11:46:59 AM 4688 A new process has been created.
+11/23/2026 11:46:59 AM 4688 A new process has been created.
+11/23/2026 11:46:59 AM 4688 A new process has been created.
+11/23/2026 11:46:56 AM 4688 A new process has been created.
+11/23/2026 11:46:56 AM 4688 A new process has been created.
+11/23/2026 11:46:56 AM 4688 A new process has been created.
+11/23/2026 11:46:55 AM 4688 A new process has been created.
+11/23/2026 11:46:55 AM 4688 A new process has been created.
+11/23/2026 11:46:55 AM 4688 A new process has been created.
+11/23/2026 11:46:54 AM 4688 A new process has been created.
+11/23/2026 11:46:04 AM 4688 A new process has been created.
+11/23/2026 11:45:54 AM 4688 A new process has been created.
+11/23/2026 11:45:54 AM 4688 A new process has been created.
+11/23/2026 11:45:54 AM 4688 A new process has been created.
+11/23/2026 11:45:47 AM 4688 A new process has been created.
+11/23/2026 11:45:47 AM 4688 A new process has been created.
+11/23/2026 11:45:47 AM 4720 A user account was created.
+11/23/2026 11:45:47 AM 4688 A new process has been created.
+11/23/2026 11:45:47 AM 4688 A new process has been created.
+11/23/2026 11:45:47 AM 4688 A new process has been created.
+11/23/2026 11:43:43 AM 4688 A new process has been created.
+11/23/2026 11:43:35 AM 4688 A new process has been created.
+11/23/2026 11:43:32 AM 4688 A new process has been created.
+11/23/2026 11:43:32 AM 4688 A new process has been created.
+11/23/2026 11:43:31 AM 4688 A new process has been created.
+11/23/2026 11:43:28 AM 4688 A new process has been created.
+11/23/2026 11:43:28 AM 4688 A new process has been created.
+11/23/2026 11:43:23 AM 4688 A new process has been created.
+11/23/2026 11:43:15 AM 4688 A new process has been created.
+11/23/2026 11:43:14 AM 4688 A new process has been created.
+11/23/2026 11:43:10 AM 4688 A new process has been created.
+11/23/2026 11:43:10 AM 4688 A new process has been created.
+11/23/2026 11:43:10 AM 4688 A new process has been created.
+11/23/2026 11:43:00 AM 4688 A new process has been created.
+11/23/2026 11:42:44 AM 4688 A new process has been created.
+11/23/2026 11:42:43 AM 4688 A new process has been created.
+11/23/2026 11:42:43 AM 4688 A new process has been created.
+11/23/2026 11:42:43 AM 4688 A new process has been created.
+11/23/2026 11:42:43 AM 4688 A new process has been created.
+11/23/2026 11:42:43 AM 4688 A new process has been created.
+11/23/2026 11:42:42 AM 4688 A new process has been created.
+11/23/2026 11:42:42 AM 4688 A new process has been created.
+11/23/2026 11:42:42 AM 4688 A new process has been created.
+11/23/2026 11:42:39 AM 4688 A new process has been created.
+11/23/2026 11:42:39 AM 4688 A new process has been created.
+11/23/2026 11:42:38 AM 4688 A new process has been created.
+11/23/2026 11:42:38 AM 4688 A new process has been created.
+11/23/2026 11:42:38 AM 4688 A new process has been created.
+11/23/2026 11:40:22 AM 4688 A new process has been created.
+11/23/2026 11:39:29 AM 4688 A new process has been created.
+11/23/2026 11:39:29 AM 4688 A new process has been created.
+11/23/2026 11:39:29 AM 4688 A new process has been created.
+11/23/2026 11:39:29 AM 4688 A new process has been created.
+11/23/2026 11:39:28 AM 4688 A new process has been created.
+11/23/2026 11:37:52 AM 4688 A new process has been created.
+11/23/2026 11:37:26 AM 4688 A new process has been created.
+11/23/2026 11:37:25 AM 4688 A new process has been created.
+11/23/2026 11:37:25 AM 4688 A new process has been created.
+11/23/2026 11:37:20 AM 4688 A new process has been created.
+11/23/2026 11:36:52 AM 4688 A new process has been created.
+11/23/2026 11:36:51 AM 4688 A new process has been created.
+11/23/2026 11:36:51 AM 4624 An account was successfully
+                            logged on.
+11/23/2026 11:36:51 AM 4688 A new process has been created.
+11/23/2026 11:36:51 AM 4688 A new process has been created.
+11/23/2026 11:36:51 AM 4624 An account was successfully
+                            logged on.
+11/23/2026 11:36:51 AM 4688 A new process has been created.
+11/23/2026 11:36:51 AM 4688 A new process has been created.
+11/23/2026 11:32:46 AM 4688 A new process has been created.
+11/23/2026 11:32:46 AM 4688 A new process has been created.
+11/23/2026 11:32:21 AM 4688 A new process has been created.
+11/23/2026 11:32:21 AM 4688 A new process has been created.
+11/23/2026 11:32:21 AM 4688 A new process has been created.
+11/23/2026 11:32:20 AM 4688 A new process has been created.
+11/23/2026 11:32:14 AM 4688 A new process has been created.
+11/23/2026 11:32:14 AM 4688 A new process has been created.
+11/23/2026 11:32:11 AM 4688 A new process has been created.
+11/23/2026 11:32:05 AM 4688 A new process has been created.
+11/23/2026 11:32:05 AM 4688 A new process has been created.
+11/23/2026 11:32:04 AM 4688 A new process has been created.
+11/23/2026 11:32:04 AM 4688 A new process has been created.
+11/23/2026 11:32:04 AM 4688 A new process has been created.
+11/23/2026 11:30:34 AM 4688 A new process has been created.
+11/23/2026 11:30:34 AM 4688 A new process has been created.
+11/23/2026 11:28:50 AM 4688 A new process has been created.
+11/23/2026 11:28:50 AM 4688 A new process has been created.
+11/23/2026 11:28:49 AM 4688 A new process has been created.
+11/23/2026 11:28:49 AM 4688 A new process has been created.
+11/23/2026 11:28:49 AM 4688 A new process has been created.
+11/23/2026 11:25:19 AM 4688 A new process has been created.
+11/23/2026 11:25:19 AM 4688 A new process has been created.
+11/23/2026 11:25:17 AM 4688 A new process has been created.
+11/23/2026 11:25:17 AM 4688 A new process has been created.
+11/23/2026 11:25:17 AM 4688 A new process has been created.
+11/23/2026 11:25:12 AM 4688 A new process has been created.
+11/23/2026 11:25:12 AM 4688 A new process has been created.
+11/23/2026 11:24:19 AM 4688 A new process has been created.
+11/23/2026 11:24:18 AM 4688 A new process has been created.
+11/23/2026 11:24:18 AM 4624 An account was successfully
+                            logged on.
+11/23/2026 11:24:18 AM 4688 A new process has been created.
+11/23/2026 11:24:18 AM 4688 A new process has been created.
+11/23/2026 11:24:18 AM 4624 An account was successfully
+                            logged on.
+11/23/2026 11:24:18 AM 4688 A new process has been created.
+11/23/2026 11:24:18 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:30 AM 4688 A new process has been created.
+11/23/2026 11:23:22 AM 4688 A new process has been created.
+11/23/2026 11:22:20 AM 4688 A new process has been created.
+11/23/2026 11:20:18 AM 4688 A new process has been created.
+11/23/2026 11:20:18 AM 4688 A new process has been created.
+11/23/2026 11:20:15 AM 4688 A new process has been created.
+11/23/2026 11:19:51 AM 4688 A new process has been created.
+11/23/2026 11:19:51 AM 4688 A new process has been created.
+11/23/2026 11:19:49 AM 4688 A new process has been created.
+11/23/2026 11:19:49 AM 4688 A new process has been created.
+11/23/2026 11:19:49 AM 4688 A new process has been created.
+11/23/2026 11:19:48 AM 4688 A new process has been created.
+11/23/2026 11:19:44 AM 4688 A new process has been created.
+
+
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" -MaxEvents 20 | Where-Object { $_.Id -eq 4104 } | Select-Object TimeCreated, Id, @{n='Snippet';e={ ($_.Message -split "`n")[0..2] -join ' | ' }} | Format-Table -Wrap
+
+TimeCreated              Id Snippet
+-----------              -- -------
+11/23/2026 11:53:49 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+11/23/2026 11:53:48 AM 4104 Creating Scriptblock text (1 of 1): | { ($_.Message -split "`n")[0] } |
+11/23/2026 11:53:48 AM 4104 Creating Scriptblock text (1 of 1): | Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 200 |
+                            Select-Object TimeCreated, Id, @{n='Msg';e={ ($_.Message -split "`n")[0] }} | Format-Table -Wrap |
+11/23/2026 11:51:12 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+11/23/2026 11:51:11 AM 4104 Creating Scriptblock text (1 of 1): | { ($_.Message -split "`n")[0] } |
+11/23/2026 11:51:11 AM 4104 Creating Scriptblock text (1 of 1): | Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624,4625,4688,4720} -MaxEvents 40 |
+                            Select-Object TimeCreated, Id, @{n='Msg';e={ ($_.Message -split "`n")[0] }} | Format-Table -Wrap |
+11/23/2026 11:50:53 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+11/23/2026 11:50:53 AM 4104 Creating Scriptblock text (1 of 1): | { Set-StrictMode -Version 1; $_.OriginInfo } |
+11/23/2026 11:50:53 AM 4104 Creating Scriptblock text (1 of 1): | { Set-StrictMode -Version 1; $_.ErrorCategory_Message } |
+11/23/2026 11:50:53 AM 4104 Creating Scriptblock text (1 of 1): | { Set-StrictMode -Version 1; $_.PSMessageDetails } |
+11/23/2026 11:47:05 AM 4104 Creating Scriptblock text (1 of 1): | $global:? |
+11/23/2026 11:46:55 AM 4104 Creating Scriptblock text (1 of 1): | runas /user:BadUser1 cmd |
+11/23/2026 11:46:55 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+11/23/2026 11:46:55 AM 4104 Creating Scriptblock text (1 of 1): | Start-Process -FilePath "powershell.exe" -Verb runAs -ArgumentList "-Command", "runas
+                            /user:BadUser1 cmd" -ErrorAction SilentlyContinue |
+11/23/2026 11:45:54 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+11/23/2026 11:45:54 AM 4104 Creating Scriptblock text (1 of 1): | net user lab3suspect /delete |
+11/23/2026 11:45:47 AM 4104 Creating Scriptblock text (1 of 1): | prompt |
+
+
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-WinEvent -LogName Security -MaxEvents 100 | ConvertTo-Json -Depth 5 | Out-File "$HOME\Desktop\security-events.json"
+PS C:\Users\jlmpi\Downloads\lab3-win> Add-MpPreference -ExclusionPath "$HOME\Documents\GitHub\ia462-midterm-jmill254\midterm\app"
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-MpPreference | Select-Object -ExpandProperty ExclusionPath
+C:\Users\jlmpi\Documents\GitHub\ia462-midterm-jmill254\midterm\app
+PS C:\Users\jlmpi\Downloads\lab3-win> Get-MpPreference | Select-Object -ExpandProperty ExclusionPath | Out-File "$HOME\Desktop\defender-exclusions.txt"
+PS C:\Users\jlmpi\Downloads\lab3-win> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261123121753
+**********************
