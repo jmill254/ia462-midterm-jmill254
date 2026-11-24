@@ -1,5 +1,5 @@
 # Stage 1 - Builder
-FROM python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535 AS builder
+FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928 AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ COPY requirements.lock ./requirements.txt
 RUN pip wheel --no-cache-dir --require-hashes --wheel-dir /wheels -r requirements.txt
 
 # Stage 2 - Runtime
-FROM python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535
+FROM python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928
 
 RUN groupadd --system appgroup && \
     useradd --system --gid appgroup --home /app --shell /usr/sbin/nologin appuser
